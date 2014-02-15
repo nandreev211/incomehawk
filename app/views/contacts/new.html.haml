@@ -1,0 +1,10 @@
+- title "Add Contact"
+- sidebar "tip_contacts"
+- content_for :head do
+  -#= include_javascripts :add_contact, :swfupload
+  = javascript_include_tag "add_contact", "swfupload"
+
+= render 'form'
+
+:javascript
+  window.organization_id = '#{@organization.id}'

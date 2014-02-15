@@ -1,0 +1,32 @@
+!!! 1.1
+%html{"xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %body
+    .main
+      %h1
+        Contact from Income Hawk Website
+      %h2
+        Message:
+      %p
+        = @contact.body
+      %h3
+        Details:
+      %p
+        %b
+          Name:
+        == #{@contact.first_name} #{@contact.last_name}
+      %p
+        %b
+          Email:
+        = @contact.email
+      %p
+        %b
+          Phone:
+        = @contact.phone
+      %p
+        %b
+          Phone:
+        = @contact.phone
+      %p
+        %b
+          Subject:
+        = @contact.subject

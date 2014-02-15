@@ -1,0 +1,43 @@
+.additional-section
+  .top-section.projects-header
+    .billed-payments
+      .number=p @next_month_payments.sum(&:billed_value)
+      %label{:for => ""} Billed
+    .remaining-payments
+      .number=p @next_month_payments.sum(&:remaining_value)
+      %label{:for => ""} Remaining
+    .completed
+      .bar-outer
+        - perc = percent(@next_month_payments.sum(&:billed_value), @next_month_payments.sum(&:total_value))
+        .bar-inner{:class => percent_class(perc)}= "#{perc} %"
+      %label{:for => ""}
+        = per(perc)
+        Completed
+  - billed, remaining = @next_month_payments.partition(&:completed?)
+  - if remaining.size > 0
+    .remaining-payments-section
+      %h3.remaining-header Remaining
+      %ul.payments-list
+        - remaining.each do |payment|
+          %li.month-payment
+            .payment-name
+              %h4.payment-project
+                = link_to payment.project.name, payment.project
+              .payment-description= payment.description
+            .payment-price=p payment.total_value
+            .payment-type= "(#{payment.recurring})"
+            .payment-date= payment.start_date.strftime("#{ActiveSupport::Inflector.ordinalize(payment.start_date.day)} %b %Y")
+  - if billed.size > 0
+    .billed-payments-section
+      %h3.billed-header Billed
+      %ul.payments-list
+        - billed.each do |payment|
+          %li.month-payment
+            .payment-name
+              %h4.payment-project
+                = link_to payment.project.name, payment.project
+              .payment-description= payment.description
+            .payment-price=p payment.total_value
+            .payment-type= "(#{payment.recurring})"
+            .payment-date= payment.start_date.strftime("#{ActiveSupport::Inflector.ordinalize(payment.start_date.day)} %b %Y")
+  = link_to "View all payments", payments_path, class: 'view-more-link'

@@ -1,0 +1,5 @@
+%li.project-added-contact(id='contact_#{contact.id}' class='persistent-contact' contact_id='#{contact.id}')
+  = link_to contact.name, contact, :class => 'contact-name'
+  .contact-card-wrapper
+    = link_to "Contact Information", contact, :class => 'contact-card', :alt => 'Contact Information'
+    = render :partial => 'projects/contact_hover', :locals => {:contact => contact}

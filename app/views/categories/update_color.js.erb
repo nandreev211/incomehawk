@@ -1,0 +1,2 @@
+$("#category_<%= @category.id%>").find('.selected-color').css('background', 'none repeat scroll 0 0 <%= @category.color %>')
+$.ctNotify('Category <%= @category.name %> updated', 'message')

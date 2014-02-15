@@ -1,0 +1,27 @@
+- title "Login"
+
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: ""}) do |f|
+  - if flash[:alert]
+    .login-message.error
+      = flash[:alert]
+      = link_to "Forgot your password?", new_password_path(resource_name)
+  - if flash[:notice]
+    .login-message.notice
+      = flash[:notice]
+  .field-wrapper.login-email-wrapper
+    = f.label :email, "Email Address"
+    = f.email_field :email, class: 'login-email'
+  .field-wrapper.login-pass-wrapper
+    = f.label :password
+    = f.password_field :password, class: 'login-pass', id: 'password-password'
+    = f.text_field :password, class: 'login-pass', id: 'password-text'
+    = link_to "Show", '#', class: 'show-password show-hide-pass'
+  - if devise_mapping.rememberable?
+    .remember-me
+      = f.check_box :remember_me, class: 'login-remember'
+      = f.label :remember_me, "Rembember me ?", class: 'login-remember'
+  = link_to "Forgot my password?", new_password_path(resource_name), class: 'forgot-pass'
+  .bottom-buttons
+    = f.submit "login", class: 'form-submit', id: 'login-button'
+    %span.login-or or
+    = link_to "Signup", new_registration_path(resource_name), class: 'or-link'

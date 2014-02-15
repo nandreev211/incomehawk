@@ -1,0 +1,229 @@
+.right-col-block ul.action-buttons li {
+float:none;
+display:block;
+width:100%;
+padding:0;
+clear:both;
+margin:0 !important; 
+margin-bottom:2px !important;
+}
+.additional-section {
+	margin:0 !important;
+	left:-1px;
+	right:-1px;
+	border:1px solid #ddd;
+	border-top:none;
+	width:auto;
+	z-index:1000;
+	
+	
+}
+#next-month .additional-section {
+	left:-1px;
+	right:-1px;
+}
+ .month-additional {
+	margin-right:10px;
+	position:relative;
+	overflow:visible;
+	
+}
+.additional-section:after,
+.month-additional:after {
+	content: "";
+	clear:both;
+	display:block;
+	
+}
+.dashboard-project {
+	margin-top:20px;
+}
+.right-col-block ul.action-buttons {
+left:0;
+right:0;
+width:100%;
+padding:5px;
+padding-top:0;
+margin:0 auto;
+}
+#dashboard-header {
+padding-top:120px;
+}
+#dashboard-header .month {
+padding-right:0;
+}
+.projects-header > div .number {
+font-size:28px;
+
+}
+.payments-button {
+	
+	right:10px;
+}
+
+#dashboard-header .payments {
+	
+	width:auto;
+}
+
+.additional-section .top-section .billed-payments, .additional-section .top-section .remaining-payments {
+ width:40%;   
+ margin:0;
+}
+
+#dashboard-header .valued {
+	
+	margin-right:50px;
+}
+
+#dashboard-header .graph {
+	
+	margin-right:30px;
+}
+
+.project-row label {
+	font-size:11px;
+
+}
+
+.project-row .number {
+	font-size:16px;
+
+}
+
+#header #user-menu {
+	
+	width:auto;
+}
+/* login styles */
+
+#login-page {
+background:#4abbc4 url(../images/login-bg.jpg) center center no-repeat;
+color:white;
+font-family: 'Kreon', serif;
+}
+
+
+#login-wrapper {
+margin:10px;
+width:300px;
+background:none;
+overflow:hidden;
+margin-top:20px;
+min-height:500px;
+}
+.income-logo {
+width:300px;
+background:url(../images/income-hawk-logo.png) no-repeat left top;
+display:block;
+height:40px;
+line-height:9999px;
+float:left;
+overflow:hidden;
+clear:both;
+margin-bottom:30px;
+}
+.login-form {
+width:270px;
+margin:0;
+padding:0;
+
+float:left;
+clear:both;
+}
+#login-page label {
+color:white;
+text-transform:none;
+font-weight:normal;
+font-size:24px;
+margin-bottom:10px;
+display:block;
+}
+.login-field {margin-bottom:20px;}
+
+.login-form input {
+border-radius:5px;
+border:none;
+background:white;
+width:250px;
+padding:15px 10px;
+font-size:20px;
+}
+
+#login-page .remember-me  {
+margin-top:10px;
+}
+#login-page .remember-me label {
+font-size:14px;
+display:inline;
+}
+
+#login-page .remember-me input {
+width:auto;
+display:inline;
+clear:none;
+}
+
+.forgot-pass {
+float:left;
+margin-top:10px;
+
+color:#15646d;
+text-decoration:underline;
+font-style:italic;
+margin-bottom:10px;
+}
+
+#login-button {
+display:inline-block;
+font-family: 'Kreon', serif !important;
+text-transform:uppercase;
+color:white;
+background:url(../images/button-bg.png) repeat-x top;
+width:270px;
+margin-top:20px;
+cursor:pointer;
+margin-right:20px;
+float:left;
+}
+
+#login-button:hover {
+background:url(../images/button-bg.png) repeat-x bottom;
+}
+.login-or {
+float:left;
+margin-left:20px;
+margin-top:20px;
+display:none;
+}
+.signup-link {
+display:inline-block;
+color:white;
+width:260px;
+display:block;
+text-align:center;
+margin:0;
+font-size:25px;
+float:left;
+margin-top:10px;
+}
+form.forgot .signup-link {
+  margin-top: 33px;
+}
+.bottom-buttons {
+width:100%;
+}
+
+.login-message {
+background:#eb2a65 url(../images/sad.png) no-repeat 10px;
+padding:10px;
+border-radius:5px;
+margin-bottom:20px;
+border:1px solid #e91048;
+padding-left:40px;
+
+}
+
+.login-message a {
+color:#73ebf5;
+}

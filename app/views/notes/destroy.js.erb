@@ -1,0 +1,3 @@
+<% if @updated %> 
+  $("#notes-list #note_<%= @note.id %>").hide('fast', function() { $(this).remove() })
+<% end %>

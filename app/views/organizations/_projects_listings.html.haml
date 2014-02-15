@@ -1,0 +1,57 @@
+- pp = Project::MAX_LIMIT
+
+- if @active_projects.size > 0
+  #active-projects.dashboard-project
+    %h2.open
+      = link_to "Active Projects", '#active-projects-container', class: "toggle-link"
+    #active-projects-container
+      .active-projects-icon Active Projects
+      #active-projects-header.projects-header
+        = render_projects_header(@active_projects)
+      #active-projects-list.projects-list(page='1')
+        %ul
+          - @active_projects[0..pp-1].each do |project|
+            = render_project project
+        = render :partial => 'projects/projects_footer', :locals => {:projects => @active_projects}
+
+- if @prospective_projects.size > 0
+  #prospective-projects.dashboard-project
+    %h2.open
+      = link_to "Prospective Projects", '#prospective-projects-container', class: "toggle-link"
+    #prospective-projects-container
+      .prospective-projects-icon Prospective Projects
+      #prospective-projects-header.projects-header
+        = render_projects_header(@prospective_projects)
+      #prospective-projects-list.projects-list(page='1')
+        %ul
+          - @prospective_projects[0..pp-1].each do |project|
+            = render_project project
+        = render :partial => 'projects/projects_footer', :locals => {:projects => @prospective_projects}
+
+- if @lost_projects.size > 0
+  #lost-projects.dashboard-project
+    %h2.open
+      = link_to "Lost Projects", '#lost-projects-container', class: "toggle-link"
+    #lost-projects-container
+      .lost-projects-icon Lost Projects
+      #lost-projects-header.projects-header
+        = render_projects_header(@lost_projects)
+      #lost-projects-list.projects-list(page='1')
+        %ul
+          - @lost_projects[0..pp-1].each do |project|
+            = render_project project
+        = render :partial => 'projects/projects_footer', :locals => {:projects => @lost_projects}
+
+- if @completed_projects.size > 0
+  #completed-projects.dashboard-project
+    %h2.open
+      = link_to "Completed Projects", '#completed-projects-container', class: "toggle-link"
+    #completed-projects-container
+      .active-projects-icon Completed Projects
+      #completed-projects-header.projects-header
+        = render_projects_header(@completed_projects)
+      #completed-projects-list.projects-list(page='1')
+        %ul
+          - @completed_projects[0..pp-1].each do |project|
+            = render_project project
+        = render :partial => 'projects/projects_footer', :locals => {:projects => @completed_projects}

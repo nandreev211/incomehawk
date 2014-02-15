@@ -1,0 +1,6 @@
+= form_tag payments_path(format: :js), method: :get, remote: true, id: 'payment-filter-form' do
+  .payments-date-range
+    .form-item
+      = text_field_tag :date_range, @date_range, :id => 'payments-range', :placeholder => 'Date Range'
+    .form-item.status
+      = select_tag :status, payment_status_filter_options, :id => 'payments-status'

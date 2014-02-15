@@ -1,0 +1,6 @@
+$("#payment_<%= @payment.id %>").hide('fast').remove()
+$.ctNotify('Payment deleted')
+
+$("#active-projects-container").html("<%= escape_javascript(render_project_overview(@payment.project, true))%> ")
+
+sortPayments()

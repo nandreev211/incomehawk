@@ -1,0 +1,6 @@
+<% if @project.status == 'Completed' %> 
+  $("#payments-list").html("<%= escape_javascript(render(@project.payments)) %>")
+<% end %>
+$("#active-projects-container").html("<%= escape_javascript(render_project_overview(@project, true))%> ")
+$.ctNotify("Status updated!")
+$.fallr('hide')

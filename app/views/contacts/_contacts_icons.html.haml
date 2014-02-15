@@ -1,0 +1,12 @@
+- contacts.group_by{|c| c.name.downcase.at(0)}.sort_by{|x, _| x}.each do |group, contacts|
+  %li
+    %h3= group
+    %ul.contacts-list
+      - contacts.each do |contact|
+        %li
+          %div
+            .left
+              = image_tag contact_avatar(contact)
+            .ico-name
+              = link_to contact_path( contact.id) do
+                = contact.name

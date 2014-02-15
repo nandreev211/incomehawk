@@ -1,0 +1,7 @@
+- if @billed_payments.size > 0
+  #billed-payments.right-col-block
+    %h3.block-title Billed Payments
+    .payment-group
+      %ul.payment-list
+        - @billed_payments.each do |p|
+          = render :partial => 'sidebar/payment', :locals => {:payment => p}

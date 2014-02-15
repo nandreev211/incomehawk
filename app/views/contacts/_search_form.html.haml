@@ -1,0 +1,3 @@
+- form_for :contact, :url => filter_contacts_path( :format => :js), :remote => true, :html => {:id => 'search-contact-form'}, :method => :get do |f|
+  = f.text_field :name, :id => "search-contact-name"
+  .search-icon

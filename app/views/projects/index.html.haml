@@ -1,0 +1,12 @@
+- title "Projects"
+#active-projects.dashboard-project
+  %h2.open
+    = link_to "#{@status} Projects", '#active-projects-container', class: "toggle-link"
+  #active-projects-container
+    %div{:class => "#{@status.downcase}-projects-icon"} Projects
+    .projects-header
+      = render_projects_header(@projects)
+    #active-projects-list.projects-list
+      %ul
+        - @projects.each do |project|
+          = render_project project

@@ -1,0 +1,23 @@
+:plain
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Income Hawk Dashboard"
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,200,300,600,700", :rel => "stylesheet", :type => "text/css"}/
+    = javascript_include_tag 'login/jquery-1.9.1.min.js'
+    = javascript_include_tag 'login/jquery.icheck.min.js'
+    = javascript_include_tag 'login/myscript.js'
+    -#= stylesheet_link_tag 'login'
+    -#= stylesheet_link_tag 'css/styles-750-480', :media => '(max-width: 750px), (max-device-width: 750px)'
+    -#= stylesheet_link_tag 'css/styles-960-750', :media => '(max-width: 960px) and (min-width:750px), (max-device-width: 960px) and (min-device-width:750px)'
+    -#= stylesheet_link_tag 'css/styles-0-480', :media => '(max-width: 480px), (max-device-width: 480px)'
+    = stylesheet_link_tag 'css/icheck'
+    = stylesheet_link_tag 'css/styles-2013'
+  %body#login-page
+    #login-wrapper.wrapper
+      .login-form.small-form-wrapper
+        %a.income-logo{:href => "http://www.incomehawk.com"} IncomeHawk
+        = yield
+    / login wrapper

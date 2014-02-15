@@ -1,0 +1,16 @@
+- title "Contacts"
+- sidebar "add_buttons", "tip_contacts"
+
+- content_for :head do
+  -#= include_javascripts 'contacts'
+  = javascript_include_tag 'js/contacts.js'
+
+.fieldset.contacts-fieldset
+  %h3
+    %a{:href => "#"} Contacts
+  .add-contact-icon Contacts
+
+  = render 'contacts/search_form'
+  %br
+  %ul#contact-list-container
+    = render :partial => 'contacts/contacts_icons', :locals => {:contacts => @contacts}

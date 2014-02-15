@@ -1,0 +1,42 @@
+#modal-start-tour
+  %p.modal-header Welcome to IncomeHawk
+  %p.modal-description
+    We've created some sample projects and payments in order to help familiarize you with your Dashboard.<br>You can remove them and start fresh by going to your
+    = link_to "Account", '/account'
+    page.
+  %ul.tour-buttons
+    %li.green-button
+      = link_to "Start Tour", "#", :id => "start-tour", :class => "start-tour-button"
+    %li.cancel-link
+      = link_to "Skip Tour", "#", :class => "skip-tour-button"
+  .modal-side-bar
+
+-##tour-estimated-income.single-step
+-#  %header
+-#    %h3= "Estimated Income"
+-#    %p Here you can see the expected income of the current and next month, based on all payments in the system. Click to see a per payment breakdown.
+-#
+-##tour-projects-by-status.single-step
+-#  %header
+-#    %h3= "Projects by Status"
+-#    %p In the main Section you can see all project stats, grouped by the different project statuses: Active, Prospective, Lost, and Completed.
+-#
+-##tour-overview.single-step
+-#  %header
+-#    %h3= "Overview"
+-#    %p For each project group and for each project you can see, the amount of payments, their total value, how much has already been billed, and how much is still remaining.
+-#
+-##tour-actions.single-step
+-#  %header
+-#    %h3= "Actions"
+-#    %p Create new projects and contacts using these buttons.
+-#
+-##tour-universal-search.single-step
+-#  %header
+-#    %h3= "Universal Search"
+-#    %p Quickly jump to project or contact pages.
+-#
+-##tour-finish.single-step
+-#  %header
+-#    %h3= "That's it!"
+-#    %p We’re done with the basic tour, play around with our app, and remember you can delete the Sample projects and payments from the account page.

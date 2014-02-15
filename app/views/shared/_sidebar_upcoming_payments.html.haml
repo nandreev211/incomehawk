@@ -1,0 +1,21 @@
+- if @upcoming_today_payments.size > 0 || @upcoming_tomorrow_payments.size > 0 || @upcoming_next_week_payments.size > 0
+  #upcoming-payments.right-col-block
+    %h3.block-title Upcoming Payments
+    - if @upcoming_today_payments.size > 0
+      #today.payment-group
+        %h4 Today
+        %ul.payment-list
+          - @upcoming_today_payments.each do |p|
+            = render :partial => 'sidebar/payment', :locals => {:payment => p}
+    - if @upcoming_tomorrow_payments.size > 0
+      #tomorrow.payment-group
+        %h4 Tomorrow
+        %ul.payment-list
+          - @upcoming_tomorrow_payments.each do |p|
+            = render :partial => 'sidebar/payment', :locals => {:payment => p}
+    - if @upcoming_next_week_payments.size > 0
+      #next-week.payment-group
+        %h4 Next Week
+        %ul.payment-list
+          - @upcoming_next_week_payments.each do |p|
+            = render :partial => 'sidebar/payment', :locals => {:payment => p}

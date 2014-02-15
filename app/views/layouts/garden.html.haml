@@ -1,0 +1,35 @@
+:plain
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "Income Hawk Dashboard"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor", "application"
+    = csrf_meta_tag
+    = stylesheet_link_tag 'css/styles-750-480', :media => '(max-width: 750px), (max-device-width: 750px)'
+    = stylesheet_link_tag 'css/styles-960-750', :media => '(max-width: 960px) and (min-width:750px), (max-device-width: 960px) and (min-device-width:750px)'
+    = stylesheet_link_tag 'css/styles-0-480', :media => '(max-width: 480px), (max-device-width: 480px)'
+    = yield :head
+
+  %body
+    = render 'layouts/header'
+    - flash.each do |name, msg|
+      - name = 'message' if name.to_s == 'notice'
+      :javascript
+        $.ctNotify('#{msg}', '#{name}')
+    #main-body
+      .inner
+        #left-col
+          = yield
+        #right-col
+          = prepare_sidebar
+          = yield :sidebar
+    #ajax-loader{:style=>""}
+      %p
+        %span.loader
+        %span.label Updating ...
+    - if @organization
+      #organizationCurrency.hidden= raw Organization.currency_symbol(@organization.currency)
+

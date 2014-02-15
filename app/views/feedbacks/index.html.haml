@@ -1,0 +1,12 @@
+.content
+  = semantic_form_for @contact, :url => feedbacks_path do |f|
+    .contact_form_left
+      = f.semantic_errors
+      = f.inputs do 
+        = f.input :email 
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :phone
+        = f.input :subject
+        = f.input :body, :as => :text, :input_html => {:size => '40x4'}
+    = f.submit "Send"

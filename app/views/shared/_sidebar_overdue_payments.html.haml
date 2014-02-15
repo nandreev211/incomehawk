@@ -1,0 +1,7 @@
+- if @overdue_payments.size > 0
+  #overdue-payments.right-col-block
+    %h3.block-title Overdue Payments
+    .payment-group
+      %ul.payment-list
+        - @overdue_payments.each do |p|
+          = render :partial => 'sidebar/payment', :locals => {:payment => p}

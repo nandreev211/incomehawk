@@ -1,0 +1,16 @@
+%li.single-payment{:id => "payment_#{payment.id}"}
+  .payment-completed-icon{:class => completed_class(payment), :payment_id => payment.id}
+    %span= completed_text(payment)
+  .payment-value
+    =p payment.total_value 
+  .payment-title
+    .payment-project-name
+      = link_to payment.project.try(:name), payment.project
+    .payment-name
+      = payment.description
+  .payment-date
+    = payment.start_date.strftime("#{ActiveSupport::Inflector.ordinalize(payment.start_date.day)} %b %Y")
+  .payment-type
+    = surround '(', ')' do
+      = payment.recurring
+  .sort-order{:order => payment.start_date.to_i}

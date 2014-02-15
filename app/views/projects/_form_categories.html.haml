@@ -1,0 +1,6 @@
+%li.form-item
+  = f.label :category, :class => 'form-label'
+  = f.select :category_id, @organization.categories_list, {:selected => cat }, :prompt => "", :id => 'project-categories'
+  .hidden
+    = link_to 'Edit categories', new_category_path( :format => :js), :rel => "facebox", :id => 'create_category_link'
+  %p.form-description Select the category for this project

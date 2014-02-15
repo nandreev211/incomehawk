@@ -1,0 +1,8 @@
+.add-payments.fieldset
+  %h3
+    %a{:href => "#"} Notes
+  .add-note-icon Notes
+
+  / form should be below, because it builds an extra note
+  = render partial: 'notes/notes', locals: { notes: notes }
+  = render partial: 'notes/form'

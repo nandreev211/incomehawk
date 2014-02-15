@@ -1,0 +1,52 @@
+= semantic_form_for @project, :html => { :class => "add-form", :id => "add-project" }  do |f|
+  %h2
+    %a{:href => "#"}= yield :title
+  .add-project-icon= yield :title
+
+  - unless @project.errors.empty?
+    - @project.self_errors.full_messages.each do |msg|
+      %li.errors.form-item
+        = raw msg
+    - @project.organization.errors.full_messages.each do |msg|
+      %li.errors.form-item
+        = raw msg
+
+  %li.form-item
+    = f.label :name, :class => 'form-label'
+    = f.text_field :name
+    %p.form-description Choose a title for the project
+
+  = render :partial => 'form_contacts', :locals => {:f => f, :contacts => @project.contacts}
+
+  %li.form-item
+    = f.label :description, :class => 'form-label'
+    = f.text_area :description, :size => '80x2'
+    %p.form-description Describe the Project
+
+  = render :partial => 'form_categories', :locals => {:f => f, :cat => @project.category_id}
+
+  %li.form-item
+    = f.label :status, :class => 'form-label'
+    = f.select :status, options_for_select(Project::STATUSES.collect{|s| [s, s]}, @project.status), :html => {:id => 'project_status'}, :prompt => ""
+    %p.form-description At what stage is this project?
+
+  #project_options
+    #eva_container
+      %li.form-item
+        = f.label :estimated_value, :class => 'form-label'
+        .currency= currency
+        = f.text_field :estimated_value
+        %p.form-description
+    #payments_container
+      = render :partial => 'form_payments', :locals => { :payments => @project.payments, :f => f }
+
+  %ul.action-buttons
+    %li.green-button
+      - button_txt = @project.new_record? ? "Add Project" : "Update"
+      = link_to_function button_txt, "addProjectButtonClick()", :class => "add-project"
+    %li.cancel-link
+      %span or
+      = link_to "Cancel", :back
+      - unless @project.new_record?
+        = link_to "Delete", '#', :class => 'delete-link', :id => 'delete-project-btn'
+        .hidden= link_to "Delete", project_path( @project), :method => :delete, :class => 'delete-link', :id => 'delete-project-link'

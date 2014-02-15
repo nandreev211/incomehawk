@@ -1,0 +1,40 @@
+- title "Project"
+- sidebar "add_buttons", "tip_contacts"
+
+#contact-info.fieldset.main-section
+  %h1.contact-name
+    = @contact.name
+    = link_to "(edit)", edit_contact_path( @contact), :class => 'edit-link'
+  .contact-logo        
+    = image_tag contact_avatar(@contact), :class => 'logo-preview'
+  %ul.contact-details-group
+    %li.contact-email
+      %span.label Email Address
+      %a{:href => "mailto:#{@contact.email}"}= @contact.email
+    - unless @contact.website.blank?
+      %li.contact-website
+        %span.label Website Address
+        %a{:href => "#{@contact.website}"}= @contact.website
+  %ul.contact-details-group
+    - unless @contact.work_phone.blank?
+      %li.contact-phone
+        %span.label> Cell Phone Number
+        = @contact.work_phone
+    - unless @contact.home_phone.blank?
+      %li.contact-cell
+        %span.label> Phone Number
+        = @contact.home_phone
+  - if !@contact.no_address
+    %ul.contact-details-group
+      %li.contact-address
+        %span.label> Address
+        = raw @contact.address_full
+  %ul.contact-details-group.contact-note-group
+    %li.contact-note
+      %p  
+        = @contact.description
+- if @projects.size > 0
+  = render :partial => 'organizations/projects_listings'
+- else
+  #active-projects.dashboard-project    
+    This customer has no projects

@@ -1,0 +1,101 @@
+#modal-start-tour {
+    background-color: white;
+    box-shadow: 0 0 20px 0 #222;
+    -webkit-box-shadow: 0 0 20px 0 #222;
+    -moz-box-shadow: 0 0 20px 0 #222;
+    display: none;
+    top: 100px;
+    height: 330px;
+    padding: 20px;
+    width: 640px;
+    z-index: 1000;
+}
+
+#modal-start-tour.active {
+    display: block;
+}
+
+#modal-start-tour .modal-header {
+    color: #4a4a4a;
+    font-size: 28px;
+    background: white;
+    margin-top: 40px;
+    padding: 0px 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding-right: 50px;
+}
+
+#modal-start-tour .modal-description {
+    color: #4a4a4a;
+    font-size: 15px;
+    background: white;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding-right: 240px;
+    line-height: 22px;
+}
+
+#modal-start-tour .modal-description a {
+    font-weight: bold;
+}
+
+#modal-start-tour .green-button {
+    background-color: #76bc43;
+}
+
+#modal-start-tour .tour-buttons {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+#modal-start-tour .start-tour-button {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 16px 30px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 3px 0px #35c524;
+}
+
+#modal-start-tour .skip-tour-button {
+    display: block;
+    color: #2c84be;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 18px 30px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+#modal-start-tour li {
+    display: inline-block;
+}
+
+#modal-start-tour .modal-side-bar {
+    background: url('/assets/tour-hawk.png') no-repeat;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 197px;
+    height: 313px;
+}
+#simplemodal-container a.modalCloseImg {
+    background: url('/assets/sprite.png') -70px -90px;
+    width:25px;
+    height:29px;
+    display:inline;
+    z-index:3200;
+    position:absolute;
+    top:-15px;
+    right:-18px;
+    cursor:pointer;
+}
+
+#simplemodal-overlay {
+    background-color: #000;
+}

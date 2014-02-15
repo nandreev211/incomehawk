@@ -1,0 +1,20 @@
+.admin_nav {
+  background: #cae8ea;
+  border-bottom: 1px solid #c1dad7;
+  clear: both;
+  overflow: hidden;
+  margin-top: -20px;
+  padding: 10px 0; }
+  .admin_nav ul {
+    margin: 0; }
+    .admin_nav ul li {
+      float: left;
+      list-style: none;
+      margin-left: 0;
+      margin-right: 30px; }
+      .admin_nav ul li a {
+        font-size: 14px; }
+        .admin_nav ul li a.ico {
+          padding-left: 20px; }
+          .admin_nav ul li a.ico.plus {
+            background: url(/images/ico-plus.png) no-repeat; }

@@ -1,0 +1,4 @@
+$('#payments-list').html('<%= escape_javascript(render(:partial => "plain_payment", :collection => @payments, :as => :payment))%>')
+$("#payments-header").html('<%= escape_javascript(render("list_header", :payments => @payments.to_a)) %>')
+
+updatePaymentCompletedTooltips();

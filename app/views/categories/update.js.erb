@@ -1,0 +1,12 @@
+<% if @update_color %>
+  $("#category_<%= @category.id%>").find('.selected-color').css('background', 'none repeat scroll 0 0 <%= @category.color %>')
+<% elsif @update_name %>
+  $("#project_category_id option[value='<%= @category.id %>']").text('<%= @category.name %>')
+  $("#category_<%= @category.id%>").find('.category-name').text('<%= @category.name %>')
+<% end %>
+$.ctNotify('Category <%= @category.name %> updated', 'message')
+
+// update project category select
+$("#project-categories option[value='<%= @category.id %>']").text('<%= @category.name %>')
+
+$('#project-categories').chosen().trigger("liszt:updated")

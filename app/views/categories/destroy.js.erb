@@ -1,0 +1,18 @@
+<% if @id %>
+  $('#category_<%= @id %>').hide(200);
+  $("#project_category_id option[value='<%= @id %>']").remove()
+  $.ctNotify("Category deleted")
+<% else %>
+  $('#category_<%= @category.id %> .are-you-sure-wrapper').hide('fast')
+  $('#category_<%= @category.id %> .update-category-wrapper').hide('fast')
+  $('#category_<%= @category.id %> .category-name').show('fast')
+  $('#category_<%= @category.id %> .delete-button-small').show()
+  $('#category_<%= @category.id %> .edit-link').show()
+
+  $.ctNotify("Cannot delete this category because there are still projects using it. Please updated projects and try again.")
+<% end %>
+
+// update project category select
+$("#project-categories option[value='<%= @category.id %>']").remove();
+
+$('#project-categories').chosen().trigger("liszt:updated")

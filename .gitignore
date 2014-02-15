@@ -1,0 +1,8 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+coverage
+public/system
+config/database.yml
+.idea/

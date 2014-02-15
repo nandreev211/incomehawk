@@ -1,0 +1,25 @@
+%p
+  %h2{:style => "display:inline"}= project.name
+  = link_to '(edit)', edit_project_path( project)
+  = render :partial => 'projects/project_status_bar', :locals => {:project => project, :show_status => show_status}
+- if project.category
+  .category{:style => "background:"+project.category.color}= project.category
+%br
+%ul.project-contacts
+  - project.contacts.each do |contact|
+    = render :partial => 'projects/contact_light', :locals => {:contact => contact}
+.clear
+%br
+.projects-header
+  .number-of-projects
+    .number= project.payments.count
+    %label{:for => ""} Payments
+  .project-valued
+    .number= p(project.estimated)
+    %label{:for => ""} Valued
+  .project-notes
+    .number= project.notes.length
+    %label{:for => ""} Notes
+  .project-updated
+    .number= project.updated_at.strftime("%b %e %Y")
+    %label{:for => ""} Last updated

@@ -1,0 +1,40 @@
+#search-bar
+  -#%input#search-input{:type => "text", :placeholder => 'Search Contacts and Projects', :onblur => "if (this.value == '') {this.value = 'Search Contacts and Projects';}"}/
+  %input#search-input{:type => "text", :placeholder => 'Search Contacts and Projects'}/
+  %input.search-submit{:type => "submit", :value => "search"}/
+:javascript
+  $(function() {
+    $.widget( "custom.catcomplete", $.ui.autocomplete, {
+        _renderMenu: function( ul, items ) {
+          var self = this,
+            currentCategory = "";
+          $.each( items, function( index, item ) {
+            if ( item.category != currentCategory ) {
+              ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+              currentCategory = item.category;
+            }
+            self._renderItem( ul, item );
+          });
+        }
+      });
+
+    $("#search-input").catcomplete({
+      select: function(event, ui) {
+        var i = ui.item
+        if (i.href.length > 0)
+          window.location = i.href
+      },
+      source: "#{search_organization_path(@organization, :format => :js)}",
+      minLength: 3,
+    }).data( "catcomplete" )._renderItem = function( ul, item ) {
+          return $( "<li></li>" )
+            .data( "item.autocomplete", item )
+            .append( "<a href='" + (item.href == undefined ? '' : item.href)  + "'>" + item.label + "(" + item.desc + ")</a>" )
+            .click(function() {
+              if ($(this).find("a").attr('href').length > 0) {
+                window.location = $(this).find("a").attr('href')
+              }
+            })
+            .appendTo( ul );
+        }
+  })

@@ -1,0 +1,44 @@
+<div class='signup-form'>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <div class="form-inner">
+        <div class="signup-text">
+          Signup in 30 Seconds and start tracking your income - <strong>FREE!</strong>
+        </div>
+
+        <%= devise_error_messages! %><br />
+
+        <div class="field-wrapper signup-email-wrapper">
+          <%= f.label 'Email Address' %>
+          <%= f.email_field :email %>
+        </div>
+
+        <div class="field-wrapper signup-pass-wrapper">
+          <%= f.label :password %>
+          <%= f.password_field :password, id: 'password-password', class: "pass-field password-field" %>
+          <%= f.text_field :password, id: 'password-text', class: "pass-field-show password-field" %>
+          <%= link_to "Show", '#', class: 'show-password show-hide-pass' %>
+        </div>
+
+        <!--<p><%= f.label :password_confirmation %><br />  <%= f.password_field :password_confirmation %></p>-->
+
+        <%= f.fields_for :own_organization_attributes do |ff| %>
+            <div class="field-wrapper signup-company-wrapper">
+              <%= ff.label 'Company name' %>
+              <%= ff.text_field :name %>
+            </div>
+
+            <!--<p><%= ff.label 'URL' %><br />    <%= ff.text_field :url %></p>-->
+
+            <%= ff.hidden_field :color_scheme, :value => Organization.color_schemes.sample %>
+            <%= ff.hidden_field :currency, :value => Organization.currencies.first %>
+        <% end %>
+
+        <div class="bottom-buttons"><%= f.submit "Sign up" %>
+          <span class="login-or">or</span>
+          <%= link_to "Login", new_session_path(resource_name), class: 'or-link' %>
+        </div>
+      </div>
+  <% end %>
+
+  <!--<%= render :partial => "devise/shared/links" %>-->
+</div>

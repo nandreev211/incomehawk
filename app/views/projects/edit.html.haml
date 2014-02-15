@@ -1,0 +1,10 @@
+- title "Edit Project"
+- sidebar "add_buttons", "tip"
+- content_for :head do
+  -#= include_javascripts :edit_project
+  = javascript_include_tag "edit_project"
+= render 'form' 
+
+:javascript
+  window.organization_id = '#{@organization.id}'
+  window.project_id = '#{@project.id}'

@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    = stylesheet_link_tag "reset", "text", "960", "forms", "tables", "application", "admin"
+    = stylesheet_link_tag "formtastic", 'colorpicker'
+    = javascript_include_tag "vendor", "application"
+    = csrf_meta_tag
+    = yield(:head)
+  %body
+    .header
+      .container_12
+        .grid_3
+          = link_to root_url do
+            %h1.nomargin Income Hawk
+        .grid_9
+          - if user_signed_in?
+            %ul
+              %li= link_to 'Account', edit_organization_path(current_user.own_organization)
+              %li= link_to 'Sign Out', logout_path
+        .clear
+    .admin_nav
+      .container_12
+        .grid_12
+          %ul
+            %li= link_to "foo bar", '#'
+    .container_12.relative
+      - flash.each do |name, msg|
+        :javascript
+          $.ctNotify('#{msg}', '#{name}')
+      - if show_title?
+        .grid_12
+          %h3= yield(:title)
+      %p#notice= notice
+      = yield
+
+  .container_12
+    .footer.grid_12
+      © Income Hawk

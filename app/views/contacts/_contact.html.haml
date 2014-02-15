@@ -1,0 +1,6 @@
+%tr.contact{:id => "contact_#{contact.id}"}
+  %td= contact.name
+  %td= contact.email
+  %td
+    = link_to "[x]", contact_path( contact.id), :confirm => 'Are you sure?', :method => :delete, :remote => true
+                    

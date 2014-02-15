@@ -1,0 +1,53 @@
+%li.category-item{:id => "category_#{category.id}"}
+  %a.color-select-widget
+    %span.selected-color{:style => "background: none repeat scroll 0 0 #{category.try(:color)}"}
+    %span.dropdown-arrow Arrow
+    %span.hide-border
+    .color-grid{:category_id => "#{category.id}", :organization_id => "#{category.organization.id}"}
+      %ul.color-selection
+        %li
+          %span.color.blue
+        %li
+          %span.color.light-blue
+        %li
+          %span.color.cyan
+        %li
+          %span.color.sky-blue
+        %li
+          %span.color.eggplant
+      %ul.color-selection
+        %li
+          %span.color.fuxia
+        %li
+          %span.color.purple
+        %li
+          %span.color.red
+        %li
+          %span.color.maroon
+        %li
+          %span.color.orange
+      %ul.color-selection
+        %li
+          %span.color.brown
+        %li
+          %span.color.dark-green
+        %li
+          %span.color.light-green
+        %li
+          %span.color.gray
+        %li
+          %span.color.black
+  %h4.category-name= category.name
+  .update-category-wrapper{:category_id => "#{category.id}", :organization_id => "#{category.organization.id}"}
+    %input.edit-category-name{:type => "textfield", :value => "#{category.name}"}/
+    %a.save-category-name.small-button{:href => "#"} Save
+    %span.or or
+    %a.cancel-link{:href => "#"} Cancel
+  .are-you-sure-wrapper
+    %span.are-you-sure Are you sure?
+    = link_to "Delete Category", category, :method => :delete, :remote => true, :class => 'small-button'
+    %span.or or
+    %a.cancel-link{:href => "#"} Cancel
+  
+  = link_to "Edit", '#', :class => 'edit-link'
+  = link_to "Delete", '#', :class => 'delete-category delete-button-small'

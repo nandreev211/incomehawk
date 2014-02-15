@@ -1,0 +1,21 @@
+- sidebar "add_buttons", "tip"
+- content_for :head do
+  = javascript_include_tag 'payments/payments_index.js'
+  = javascript_include_tag 'payments/payments.js'
+
+#payments.dashboard-project
+  #payments-container
+    %h2.open
+      Payments
+    .add-payment-icon Payments
+    .projects-header.list-filters
+      = render 'list_filters', :payments => @payments.to_a
+    .projects-header#payments-header
+      = render 'list_header', :payments => @payments.to_a
+  %ul#payments-list
+    - @payments.each do |payment|
+      = render 'plain_payment', :payment => payment
+
+:javascript
+  updatePaymentCompletedTooltips()
+  window.notSortPayments = true;

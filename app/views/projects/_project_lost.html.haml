@@ -1,0 +1,25 @@
+%li.project-row
+  .project-name
+    = link_to project_path( project.id) do
+      %h5= project.name
+      - if project.category
+        .category{:style => "background:"+project.category.color}= project.category
+  .project-valued
+    .number= p(project.estimated)
+    %label{:for => ""} Valued
+  .project-billed
+    .number= p(project.billed)
+    %label{:for => ""} Billed
+  .project-remaining
+    .number= p(project.remaining)
+    %label{:for => ""} Remaining
+  .project-payments
+    .number= project.payments.count
+    %label{:for => ""} Payments
+  .project-notes
+    .number= project.notes.count
+    %label{:for => ""} Notes
+  .project-progress
+    .bar-outer
+      = progress_bar(project.payment_progress)
+    %label{:for => ""}= per project.payment_progress

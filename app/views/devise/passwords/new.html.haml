@@ -1,0 +1,13 @@
+- title "Forgot your password?"
+
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), html: { method: :post, class: "forgot login-form"}) do |f| 
+  - if flash[:alert]
+    .login-message.error
+      = flash[:alert]
+  .field-wrapper.login-email-wrapper
+    = f.label :email, "Email Address"
+    = f.email_field :email, class: 'login-email'
+  .bottom-buttons
+    = f.submit "Lost password", class: 'form-submit', id: 'login-button'
+    %span.login-or or
+    = link_to "Signup", new_registration_path(resource_name), class: 'or-link'

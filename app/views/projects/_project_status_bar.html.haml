@@ -1,0 +1,10 @@
+- if show_status
+  %ul.project-status
+    %li.prospective-button{:class => project.status == 'Prospective' ? "active" : ""}
+      = link_to_function 'Prospective', "changeProjectStatus('#{project.id}', 'Prospective'); return false;"
+    %li.active-button{:class => project.status == 'Active' ? "active" : ""}
+      = link_to_function 'Active', "changeProjectStatus('#{project.id}', 'Active'); return false;"
+    %li.completed-button{:class => project.status == 'Completed' ? "active" : ""}
+      = link_to_function 'Completed', "changeProjectStatus('#{project.id}', 'Completed'); return false;"
+    %li.lost-button{:class => project.status == 'Lost' ? "active" : ""}
+      = link_to_function 'Lost', "changeProjectStatus('#{project.id}', 'Lost'); return false;"

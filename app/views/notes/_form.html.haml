@@ -1,0 +1,6 @@
+= semantic_form_for [@project, @project.notes.new], :html => { :class => "form col" }, :remote => true  do |f|
+  = f.semantic_errors
+  = f.inputs do 
+    = f.input :text, :input_html => {:size => '74x5', :id => 'notes-form'}, :label => false
+
+  = f.submit :class => 'small-button'

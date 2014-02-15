@@ -1,0 +1,16 @@
+.ui-autocomplete-category {
+  font-size: 15px;
+  border-bottom: 1px solid #222;
+  font-weight: bold;
+  padding: .2em .4em;
+  margin: .8em 0 .2em;
+  line-height: 1.5;
+}
+  
+.ui-autocomplete {
+  font-size: 0.9em;
+}
+
+.ui-datepicker {
+  display: none;
+}

@@ -1,0 +1,8 @@
+%li.payment
+  .payment-value
+    .number= p payment.total_value
+    %label{:for => ""}= payment.recurring
+  .payment-project-title
+    = link_to project_path( payment.project.id) do
+      %h5= payment.project.name
+      .category.web-design{:style => "background:"+payment.project.category.color}= payment.project.category

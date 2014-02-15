@@ -1,0 +1,336 @@
+
+#dashboard-header {
+margin-top:70px;
+}
+#dashboard-header .valued {
+float:right;
+margin-right:80px;
+}
+.right-col-block ul.action-buttons {
+position:absolute;
+top:110px;
+left:2.5%;
+right:2.5%;
+}
+.right-col-block ul.action-buttons li {
+display:block;
+float:left;
+width:49%;
+margin-right:1%;
+
+}
+.right-col-block ul.action-buttons li:last-child {
+    margin-right:0;
+    margin-left:1%;
+    
+}
+
+.right-col-block ul.action-buttons li a{
+margin-bottom:0 !important;
+
+
+
+}
+#next-month .additional-section {
+right:0;
+left:auto;
+left:10px;
+width:auto;
+}
+.additional-section .top-section .remaining-payments{
+float:right;
+padding-right:0;
+
+width:auto;
+}
+.additional-section {
+width:100%;
+}
+.additional-section .top-section {
+overflow:hidden;
+padding-right:30px;
+}
+
+
+/* under 750px*/
+
+
+
+
+
+.inner{
+width:100%;
+padding-left:2.5%;
+padding-right:2.5%;
+}
+
+#header {
+padding-left:10px;
+padding-right:10px;
+}
+
+#header #user-menu {margin-top:0;}
+/* hide search for mobile */
+#search-bar {display:none;}
+
+#left-col {
+width:100%;
+clear:both;
+margin:0 !important;
+padding:0 !important;
+border:none;
+}
+.month {
+width:100% !important;
+clear:both;
+}
+
+#this-month {
+margin-bottom:20px;
+padding-bottom:20px;
+border-bottom:1px solid #ddd;
+
+}
+
+.dashboard-project {
+width:95%;
+padding:0;
+padding:15px;
+margin:0 auto;
+clear:both;
+float:none;
+margin-top: 70px;
+padding-bottom:30px;
+}
+.dashboard-page .dashboard-project {
+margin-top:20px;
+}
+.inner .dashboard-project h2 a{
+margin:0;
+
+display:block;
+padding-left:10px;
+padding-right:0;
+background:white;
+}
+#active-projects-container,
+#lost-projects-container,
+#prospective-projects-container,
+#completed-projects-container {
+width:100%;
+padding:0;
+margin:0 auto;
+clear:both;
+float:none;
+margin-top:0px;
+}
+
+.inner .valued-projects {
+float:right;
+margin:0;
+}
+.projects-header>div {
+ width:45%;
+ text-align:right;
+}
+.inner .billed-projects {
+text-align:left;
+margin-top:10px;
+clear:both;
+float:left;
+}
+.inner div.remaining-projects{
+float:right;
+margin:0;
+margin-top:10px;
+}
+
+.completed{
+width:100% !important;
+margin-top:10px;
+}
+
+.bar-outer {width:100% !important;}
+
+
+.project-row .project-name {
+width:100%;
+display:block;
+margin-bottom:10px;
+}
+.project-row .project-valued {
+clear:both;
+}
+#main-body .project-row .project-valued,
+#main-body .project-row .project-billed,
+#main-body .project-row .project-remaining,
+#main-body .project-row .project-payments {
+margin:0;
+width:24% !important;
+}
+#main-body .project-row {
+width:100%;
+position:relative;
+border-bottom:1px solid #ddd;
+}
+.project-row>div.project-name {
+ width:50%;   
+}
+.project-row .project-progress{
+position:absolute;
+top:2px;
+right:10px;
+margin-right:0;
+
+}
+
+#right-col {
+width:100%;
+
+}
+
+
+#navigation li a{
+padding-left:0;
+padding-right:0;
+text-align:center;
+}
+#tabs{width:100%;}
+#navigation li {
+width:24%;
+margin:0;
+padding:0;
+}
+
+#navigation li li {
+clear:both;
+width:100%;
+
+}
+#navigation li li a {
+text-align:left;
+}
+
+#navigation #tabs  { display: none; }
+#navigation select { display: inline-block; }
+
+
+
+#navigation select {
+
+width:95%;
+margin:0 auto;
+float:none;
+clear:both;
+position:relative;
+
+display:block;
+border:1px solid #ddd;
+padding:10px;
+top:8px;
+}
+
+
+#navigation{display:block; float:none; clear:both;}
+
+.projects-header > div .number {
+
+}
+
+/* login styles */
+
+
+#login-wrapper {
+margin:0 auto;
+background:none;
+overflow:hidden;
+margin-top:120px;
+min-height:400px;
+}
+.income-logo {
+width:420px;
+background:url(../images/income-hawk-logo.png) no-repeat left top;
+display:block;
+height:40px;
+line-height:9999px;
+float:none;
+margin:0 auto;
+overflow:hidden;
+clear:both;
+margin-bottom:30px;
+}
+.login-form {
+float:none;
+margin:0 auto;
+
+}
+
+
+.fieldset {
+    width:100%;
+    margin:0;
+    margin-top:20px;
+}
+.fieldset textarea {
+    width:100%;
+}
+
+
+
+
+#dashboard-header .switch-month {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  margin-left: -20px;
+  background: white;
+  text-indent: -9999px;
+  overflow: hidden;
+  height: 20px;
+  width: 40px;
+  border-radius: 50% / 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  text-align: center;
+}
+#dashboard-header .switch-month:hover {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+#dashboard-header .switch-month:after {
+  content: "";
+  margin-left: 0px;
+  margin-top:-15px;
+  margin-left:15px;
+  text-indent: 0;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 6px 5px 5px 5px;
+  border-color:  transparent  transparent #767676 transparent;
+}
+
+#dashboard-header #go-to-next-month {
+  bottom: 0;
+  top:auto;
+  left:50%;
+  border-radius: 50% / 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#dashboard-header #go-to-next-month:hover {
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+}
+#dashboard-header #go-to-next-month:after {
+  content: "";
+  margin-left: 15px;
+  margin-right: 0px;
+  margin-top:-5px;
+  text-indent: 0;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 5px 5px 6px;
+  border-color:  #767676 transparent  transparent transparent;
+}

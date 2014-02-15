@@ -1,0 +1,27 @@
+.contact-hover{:id => "contact-hover-#{contact.id}"}
+  %h1.contact-name= contact.name
+  %h2.contact-company= contact.organization_name
+  .contact-logo
+    = image_tag contact_avatar(contact), :class => 'logo-preview'
+  %ul.contact-details-group
+    %li.contact-email
+      %span.label Email Address
+      %a{:href => "mailto:#{contact.email}"}= contact.email
+    - unless contact.website.blank?
+      %li.contact-website
+        %span.label Website Address
+        %a{:href => "#{contact.website}"}= contact.website
+    - unless contact.work_phone.blank?
+      %li.contact-phone
+        %span.label> Cell Phone Number
+        = contact.work_phone
+    - unless contact.home_phone.blank?
+      %li.contact-cell
+        %span.label> Phone Number
+        = contact.home_phone
+  - if !contact.no_address
+    %ul.contact-details-group
+      %li.contact-address
+        %span.label> Address
+        = raw contact.address_full
+    .tri

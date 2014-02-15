@@ -1,0 +1,106 @@
+#add-contact.add-form
+  %h2
+    =link_to "Billing", "#"
+  .plan-selection
+    %ul.plans
+      %li.free-plan
+        .plan-title
+          %span.radio-button
+          %h2 Free
+        %p.plan-description
+          Try it out, see if you like, for as long as you want
+        %ul.plan-features
+          %li 5 Projects
+          %li 5 Clients
+          %li Unlimited Payments
+
+      %li.premium-plan
+        .plan-title
+          %span.radio-button.selected
+          %h2 Premium
+          %span.price 
+            $9
+            \
+            %span.month
+              \/month
+
+        %p.plan-description
+          All that we have to offer
+        %ul.plan-features
+          %li Unlimited Projects
+          %li Unlimited Clietns
+          %li Unlimited Payments
+          %li Any new features we roll out
+
+  %section.invoices
+    %h3 Invoice History
+    %ul.invoice-list
+      %li
+        11/29/11 - Premium
+        %strong
+          $9.00
+      %li
+        11/29/11 - Premium
+        %strong
+          $9.00
+      %li
+        11/29/11 - Premium
+        %strong
+          $9.00
+      %li
+        11/29/11 - Premium
+        %strong
+          $9.00
+      %li
+        11/29/11 - Premium
+        %strong
+          $9.00
+
+    = link_to "Load More", "#", class: "load-more"
+
+  .cc-info
+    %h3 Credit Card
+    .cc-log
+      Your next charge will be
+      %strong $9.00
+      on
+      %strong 3/28/13
+      to your card ending in
+      %strong 1234
+
+    = link_to "Change / Update Card", "#",  {id: "update-button", class: "button button-gray"}
+    .payment-errors.error.errors
+    .payment-token
+    %form#payment-form
+      %input.paymill-key.hidden{type: "text"}
+      .update-card-form
+        .field-item.cc-number
+          %label{for: "credit-card-number form-label"}
+            Credit Card Number
+          %input#credit-card-number-field.card-number{type: "text"}
+          %label{for: "credit-card-number form-label"}
+            CVC
+          %input#credit-card-number-field.card-cvc{type: "text"}
+        .field-item.cc-type
+          %label{for: "credit-card-type-field form-label"}
+            Credit Card Type
+          %select#credit-card-type-field
+            %option{value: "Mastercard"} Mastercard
+            %option{value: "Visa"} Visa
+
+        .field-item.cc-exp
+          %label{for: "credit-card-exp-month form-label"}
+            Expiration Date
+          .field-group
+            %input#credit-card-exp-month.card-expiry-month{type: "text"}
+              %p.form-description month
+          .field-group.group-slash /
+          .field-group
+            %input#credit-card-exp-year.card-expiry-year{type: "text"}
+              %p.form-description year
+
+        .form-actions
+          = submit_tag "Update", class: "button button-blue"
+          = link_to "Cancel", "#", class: "cancel-link"
+
+= javascript_include_tag "https://bridge.paymill.com/"

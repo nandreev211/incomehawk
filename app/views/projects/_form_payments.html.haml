@@ -1,0 +1,68 @@
+.add-payments.fieldset
+  %h3
+    %a{:href => "#"} Add Payments
+  .add-payment-icon Add Paymnet
+
+  #payment-type
+    #input-add-payment-type-wapper.form-item
+      %select#add-payment-type{:name => "add-payment-type", "data-placeholder" => 'Type'}
+        %option{:selected => "selected", :value => ""}
+        %option{:value => "Fixed"} Fixed
+        %option{:value => "Hourly"} Hourly
+        %option{:value => "Monthly"} Monthly
+      %label.form-description-label{:for => "add-payment-type"} Payment Type
+
+    #input-add-payment-fixed-rate-wrapper.form-item.fixed-payment-options
+      .currency= currency
+      %input.textfield{:type => "text", :class => 'payment-blur-validate'}/
+      %label.form-description-label{:for => "input-add-payment-rate"} Rate
+    #input-add-payment-fixed-date-wrapper.form-item.fixed-payment-options
+      %input.textfield.datepick{:type => "text", :class => 'payment-blur-validate'}/
+      %a.datepicker{:href => "#"} Datepicker
+      %label.form-description-label{:for => "input-add-payment-fixed-payment-date"} Expected Payment Date
+
+    #input-add-payment-hourly-rate-wrapper.form-item.hourly-payment-options
+      .currency= currency
+      %input.textfield{:type => "text", :class => 'payment-blur-validate'}/
+      %label.form-description-label{:for => "input-add-payment-rate"} Rate
+    #input-add-payment-hourly-hours-wrapper.form-item.hourly-payment-options
+      %input.textfield{:type => "text", :class => 'payment-blur-validate'}/
+      %label.form-description-label{:for => "input-add-payment-hourly-hours"} How many hours
+    #input-add-payment-hourly-date-wrapper.form-item.hourly-payment-options
+      %input.textfield.datepick{:type => "text", :class => 'payment-blur-validate'}/
+      %a.datepicker{:href => "#"} Datepicker
+      %label.form-description-label{:for => "input-add-payment-hourly-payment-date"} Expected payment date
+
+    #input-add-payment-monthly-rate-wrapper.form-item.monthly-payment-options
+      .currency= currency
+      %input.textfield{:type => "text", :class => 'payment-blur-validate'}/
+      %label.form-description-label{:for => "input-add-payment-rate"} Rate
+    #input-add-payment-monthly-months-wrapper.form-item.monthly-payment-options
+      %input.textfield{:type => "text", :class => 'payment-blur-validate'}/
+      %label.form-description-label{:for => "input-add-payment-monthly-months"} How many months
+    #input-add-payment-monthly-date-wrapper.form-item.monthly-payment-options
+      %input.textfield.datepick{:type => "text", :class => 'payment-blur-validate'}/
+      %a.datepicker{:href => "#"} Datepicker
+      %label.form-description-label{:for => "input-add-payment-monthly-payment-date"} Starting on
+    #input-add-payment-monthly-completed-wrapper.form-item
+      %input(type='checkbox' class='paymentss' id='payment-completed-href')
+      %label(for="input-payment-completed-href" class="form-description-label") Payment Received?
+      %input(type="hidden" id="new-payment-completed" value="0")
+    %br
+    #input-add-payment-description-wrapper.form-item
+      %input{:type =>"text", :class => "textfield", :id => "input-add-payment-description"}
+      %label.form-description-label Short Description
+
+  %a(href="#" class="small-button disabled" id="add-payment-button") Add Payment
+
+  %ul#payments-list
+    - if defined? payments
+      - if defined? f
+        = f.fields_for :payments do |ff|
+          = render 'payments/payment', ff: ff
+      - else
+        = render payments
+      :javascript
+        $(function() {
+          $("#payments-list").show()
+        })

@@ -1,0 +1,14 @@
+defaults: &defaults
+     adapter: postgresql
+     encoding: unicode
+     username: jasxbosvaswqlc
+     password: oh2RZTiLdrQPJUBlHhEdfxbZm5
+     host: ec2-54-243-181-115.compute-1.amazonaws.com
+
+   development:
+     <<: *defaults
+     database: d1q7sp0bf84jjd
+
+   test:
+     <<: *defaults
+     database: incomehawk_test

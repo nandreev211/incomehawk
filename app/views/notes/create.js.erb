@@ -1,0 +1,3 @@
+$("#notes-form").val('')
+$("#notes-list").prepend("<%= escape_javascript(render(@note)) %> ")
+$("#notes-list li").first().effect("highlight", {}, 3000);

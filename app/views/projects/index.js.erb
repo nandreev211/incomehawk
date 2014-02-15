@@ -1,0 +1,14 @@
+var moreProjects = $("<% @projects.each do |p| %><%= escape_javascript(render_project(p)) %><% end %>").hide()
+$('#<%= @status.downcase %>-projects-list ul').append(moreProjects)
+moreProjects.show('fast')
+
+<% if @has_next_page %>
+  $('#<%= @status.downcase %>-projects-list .collapse').show('fast')
+  $('#<%= @status.downcase %>-projects-list').attr('page', '<%= @page %>')
+  <% if @projects_left %>
+    $('#<%= @status.downcase %>-projects-list .expand').html("View <%= @projects_left %> more <%= @status.downcase %> projects")
+  <% end %>
+<% else %>
+  $('#<%= @status.downcase %>-projects-list .collapse').show('fast')
+  $('#<%= @status.downcase %>-projects-list .expand').hide('fast')
+<% end %>

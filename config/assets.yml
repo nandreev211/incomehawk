@@ -1,0 +1,91 @@
+package_assets: off
+embed_assets: off
+compress_assets: off
+gzip_assets: off
+javascript_compressor: off
+javascript_compressor: uglifier
+allow_debugging: on
+
+javascripts:
+  vendor:
+#    - public/javascripts/vendor/jquery.min.js
+    - public/javascripts/vendor/jquery.js
+    - public/javascripts/vendor/facebox.js
+    - public/javascripts/vendor/colorpicker.js
+    - public/javascripts/vendor/rails.js
+    - public/javascripts/vendor/jquery-ui.min.js
+    - public/javascripts/vendor/date.js
+    - public/javascripts/vendor/jquery.ctNotify.js
+    - public/javascripts/vendor/jquery-fallr-1.2.min.js
+    - public/javascripts/vendor/underscore-min.js
+    - public/javascripts/vendor/jquery.validate.js
+    - public/javascripts/vendor/jquery.tipTip.js
+    - public/javascripts/vendor/chosen.jquery.js
+    - public/javascripts/vendor/daterangepicker.jQuery.js
+
+  app:
+    - public/javascripts/application.js
+    - public/javascripts/functions.js
+    - public/javascripts/dashboard.js
+    - public/javascripts/plans.js
+  contacts:
+    - public/javascripts/contacts.js
+
+  add_contact:
+    - public/javascripts/add_contact.js
+
+  validate_project:
+    - public/javascripts/project/validate_project.js
+
+  payments_index:
+    - public/javascripts/payments_index.js
+    - public/javascripts/payments.js
+
+  edit_project:
+    - public/javascripts/project/add_project.js
+    - public/javascripts/project/add_project_categories.js
+    - public/javascripts/project/add_project_contacts.js
+    - public/javascripts/project/add_project_payments.js
+    - public/javascripts/payments.js
+    - public/javascripts/contacts.js
+
+  new_project:
+    - public/javascripts/project/add_project.js
+    - public/javascripts/project/add_project_categories.js
+    - public/javascripts/project/add_project_contacts.js
+    - public/javascripts/project/add_project_payments.js
+
+
+  show_project:
+    - public/javascripts/project/add_project.js
+    - public/javascripts/project/add_project_categories.js
+    - public/javascripts/project/add_project_contacts.js
+    - public/javascripts/project/add_project_payments.js
+    - public/javascripts/project/show_project.js
+    - public/javascripts/payments.js
+
+  swfupload:
+    - public/javascripts/swfupload/swfupload.js
+    - public/javascripts/swfupload/swfupload.queue.js
+    - public/javascripts/swfupload/fileprogress.js
+    - public/javascripts/swfupload/handlers.js
+    - public/javascripts/swfupload/swfupload.app.js
+
+stylesheets:
+  app:
+    - public/stylesheets/reset.css
+    - public/stylesheets/styles.css
+    - public/stylesheets/application.css
+    - public/stylesheets/facebox.css
+    - public/stylesheets/colorpicker.css
+    - public/stylesheets/chosen.css
+    - public/stylesheets/jquery-ui.css
+    - public/stylesheets/jquery.ctNotify.css
+    - public/stylesheets/jquery-fallr-1.0.css
+    - public/stylesheets/jquery-fallr-changes.css
+    - public/stylesheets/ui-changes.css
+    - public/stylesheets/tipTip.css
+    - public/stylesheets/ui.daterangepicker.css
+  login:
+    - public/stylesheets/reset.css
+    - public/stylesheets/styles.css

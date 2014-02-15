@@ -1,0 +1,16 @@
+$('#category-list').prepend( "<%= escape_javascript(render :partial => 'categories/category', :locals => {:category => @category}) %>" )
+// $('#category-list .category').last().animate({ backgroundColor: "yellow" }, 3000).animate({ backgroundColor: "" }, 3000)
+$('#input-add-category-wrapper input').attr('value', '')
+
+$('#category_<%= @category.id%> .colorpicker').colorPicker();
+$('#<%= @category.id%>').live('change', function() {
+  var cid = $(this).attr('id');
+  $("#edit_category_"+cid).submit();
+})
+
+// Add new category to project category select
+$("<option></option>").
+attr("value",<%= @category.id%>).
+text('<%= @category.name%>').insertAfter($('#project-categories').children()[1]);
+
+$('#project-categories').chosen().trigger("liszt:updated")

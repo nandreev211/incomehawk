@@ -1,0 +1,6 @@
+= f.semantic_fields_for :contact do |fc|
+  %li.form-item#input-project-contact
+    = fc.label :name, "Contacts", :class => 'form-label'
+    = f.select :contact_ids, @organization.contacts_list, {}, :class => 'contacts-select', :id => 'input-project-contact-field', :multiple => true, "data-placeholder" => "Add contacts for a project"
+    = link_to 'Create new Contact', new_contact_path( :format => :js), :rel => "facebox", :id => 'create_contact_link', :class => 'hidden'
+    %p.form-description Which Contacts are connected to this project?

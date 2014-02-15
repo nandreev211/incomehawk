@@ -1,0 +1,7 @@
+- max_projects = Project::MAX_LIMIT
+- if projects.size > max_projects
+  - diff = projects.size - max_projects
+  - msg = "View #{diff > max_projects ? max_projects : diff} more #{projects.first.status.downcase} projects"
+  .project-list-footer
+    %a.collapse{:href => "#"} Hide Projects
+    %a.expand{:href => "#", :original_text => msg}= msg

@@ -1,0 +1,12 @@
+%li.project-row
+  .project-name
+    = link_to project_path( project.id) do
+      %h5= project.name
+      - if project.category
+        .category{:style => "background:"+project.category.color}= project.category
+  .project-valued
+    .number= p(project.estimated)
+    %label{:for => ""} Valued
+  .project-notes
+    .number= project.notes.length
+    %label{:for => ""} Notes

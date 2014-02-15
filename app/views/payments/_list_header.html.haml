@@ -1,0 +1,22 @@
+- estimated = payments.sum{|x| x.total_value || 0}
+- billed = payments.select(&:completed).sum{|x| x.total_value || 0}
+- remaining = estimated - billed
+- progress = estimated == 0 ? 0 : ((billed/estimated)*100).to_i
+.number-of-projects
+  .number= payments.count
+  %label{:for => ""} Payments
+.valued-projects
+  .number= p estimated
+  %label{:for => ""} Valued
+.billed-projects
+  .number= p billed
+  %label{:for => ""} Billed
+.remaining-projects
+  .number= p remaining
+  %label{:for => ""} Remaining
+.completed
+  .bar-outer
+    = progress_bar progress
+  %label{:for => ""}
+    = per progress
+    Completed

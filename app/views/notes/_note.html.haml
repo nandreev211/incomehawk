@@ -1,0 +1,19 @@
+%li(id="note_#{note.id}")
+  %div.note
+    = note.text
+  %div.note
+    %b
+      %i
+        = note.user.try(:name)
+        \-
+        = distance_of_time_in_words_to_now(note.created_at)
+        ago
+    = link_to '[X]', [@project, note], :class => 'delete', :confirm => 'Are you sure?', :method => :delete, :remote => true
+    = link_to 'Edit', '#', :class => 'edit'
+  %div.update_form
+    = semantic_form_for [@project, note], :html => { :class => "form col" }, :remote => true  do |f|
+      = f.semantic_errors
+      = f.inputs do
+        = f.input :text, :input_html => {:size => '74x5', :id => 'notes-form', :value => note.text}, :label => false
+
+      = f.submit 'Update', :class => 'small-button'

@@ -1,0 +1,33 @@
+:javascript
+  $.ctNotifyOption({
+    sticky: false,
+    position: "fixed",
+    width: '400px',
+    anchors:{bottom: 0, right: 0}
+  });
+
+#header
+  .inner
+    = link_to @organization.name, organization_path(@organization), id: 'logo'
+    %ul#user-menu
+      %li.active
+        = link_to 'Account', account_path
+      %li
+        = link_to 'Sign out', logout_path
+#navigation
+  .inner
+    %ul#tabs
+      %li{:class => active_tab('organizations')}
+        = link_to "Dashboard", '/'
+      %li.projects_tab{:class => active_tab('projects')}
+        = link_to "Projects", projects_path
+        %ul#projects-dropdown.dropdown
+          %li= link_to "Active",      projects_path( :status => "Active")
+          %li= link_to "Prospective", projects_path( :status => "Prospective")
+          %li= link_to "Lost",        projects_path( :status => "Lost")
+          %li= link_to "Completed",   projects_path( :status => "Completed")
+      %li{:class => active_tab('payments')}
+        = link_to 'Payments', payments_path
+      %li{:class => active_tab('contacts')}
+        = link_to 'Contacts', contacts_path
+    = render :partial => 'layouts/search_bar'

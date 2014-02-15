@@ -1,0 +1,14 @@
+<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field-wrapper signup-email-wrapper">
+      <%= f.label 'Email Address' %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="bottom-buttons">
+      <%= f.submit "Resend" %>
+    </div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

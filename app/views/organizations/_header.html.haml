@@ -1,0 +1,41 @@
+#header-overlay
+#this-month.month
+  .month-additional
+    = link_to "prev", {:controller => 'organizations', :action => 'switch_month', :year => @lastmonth_year, :month => @lastmonth_month, :remote => true}, {:id => 'go-to-previous-month', :class => 'switch-month'}
+    %h3= @month_str + ", " + @year.to_s
+    %ul.graph
+      %li.col{:class => monthly_percent(-3), :title => p(@last_5_months_totals[-3])}
+      %li.col{:class => monthly_percent(-2), :title => p(@last_5_months_totals[-2])}
+      %li.col{:class => monthly_percent(-1), :title => p(@last_5_months_totals[-1])}
+      %li.current-col.col{:class => monthly_percent(0), :title => p(@last_5_months_totals[0])}
+      %li.col{:class => monthly_percent(1), :title => p(@last_5_months_totals[1])}
+    .bottom-section
+      .payments
+        .number= @this_month_payments.size
+        %label{:for => ""} Payments
+      .valued
+        .number=p @this_month_payments.sum(&:total_value)
+        %label{:for => ""} Valued
+      %span.button-outer
+        %a.payments-button{:href => "#"} Show Payments
+    = render 'additional_this'
+#next-month.month
+  .month-additional
+    %h3= @nextmonth_monthstr + ", " + @nextmonth_year.to_s
+    = link_to "next", {:controller => 'organizations', :action => 'switch_month', :year => @nextmonth_year, :month => @nextmonth_month, :remote => true}, {:id => 'go-to-next-month', :class => 'switch-month'}
+    %ul.graph
+      %li.col{:class => monthly_percent(-3), :title => p(@last_5_months_totals[-3])}
+      %li.col{:class => monthly_percent(-2), :title => p(@last_5_months_totals[-2])}
+      %li.col{:class => monthly_percent(-1), :title => p(@last_5_months_totals[-1])}
+      %li.col{:class => monthly_percent(0), :title =>  p(@last_5_months_totals[0] )}
+      %li.current-col.col{:class => monthly_percent(1), :title => p(@last_5_months_totals[1])}
+    .bottom-section
+      .payments
+        .number= @next_month_payments.size
+        %label{:for => ""} Payments
+      .valued
+        .number= p @next_month_payments.sum(&:total_value)
+        %label{:for => ""} Valued
+      %span.button-outer
+        %a.payments-button{:href => "#"} Show Payments
+    = render 'additional_next'

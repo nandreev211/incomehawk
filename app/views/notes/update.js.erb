@@ -1,0 +1,7 @@
+<% if @updated %> 
+  $("#notes-list #note_<%= @note.id %>").replaceWith("<%= escape_javascript(render(@note)) %> ")
+  $("#notes-list #note_<%= @note.id %>").first().effect("highlight", {}, 3000);
+<% else %> 
+  $("#notes-list #note_<%= @note.id %>").find('.note').show();
+  $("#notes-list #note_<%= @note.id %>").find('.update_form').hide();
+<% end %> 

@@ -1,0 +1,69 @@
+#add-contacts.lightbox
+  %a.close-button{:href => "#"} Close
+  %h2 Add Contact
+  = semantic_form_for Contact.new, :url => contacts_path( :format => :js), :remote => true, :html => {:id => 'add-contacts-form'} do |f|
+    .contact-name-wrapper
+      #contact-name.form-item
+        %label.form-contact-name-label.label-above{:for => "input-contact-first-name"} Name
+        = f.text_field :first_name, :class => 'textfield textfield-medium', :placeholder => "First Name"
+        = f.text_field :last_name, :class => 'textfield textfield-medium', :placeholder => "Last Name"
+    .contact-company-wrapper
+      #contact-company.form-item
+        = f.label :organization_name, "Company", :class => 'label-above'
+        = f.text_field :organization_name, :class => 'textfield', :placeholder => "Name of the Company"
+    .contact-email-wrapper
+      #contact-email.form-item
+        = f.label :email, :class => 'label-above'
+        = f.text_field :email, :class => 'textfield', :placeholder => "Email Address"
+    .contact-website-wrapper
+      #contact-website.form-item
+        = f.label :website, :class => 'label-above'
+        = f.text_field :website, :class => 'textfield', :placeholder => "Contact's Webiste Address"
+    .add-contact-hidden-fields
+      .contact-phone-wrapper
+        #contact-phone.form-item
+          = f.label :home_phone, "Phone", :class => 'label-above'
+          = f.text_field :home_phone, :class => 'textfield textfield-medium', :placeholder => "Home"
+          = f.text_field :work_phone, :class => 'textfield textfield-medium', :placeholder => "Work"
+      .contact-country-wrapper
+        #contact-country.form-item
+          = f.label :country, :class => 'label-above'
+          = f.input :country, :input_html => {:class => 'selectfield'}, :label => false, :priority_countries => ["United States", "Australia"], :prompt => "Select Country"
+      .contact-address-wrapper
+        #contact-address.form-item
+          = f.label :address_1, "Address", :class => 'label-above'
+          = f.text_field :address_1, :class => 'textfield-long', :placeholder => "Street 1"
+          = f.text_field :address_2, :class => 'textfield-long', :placeholder => "Street 2"
+          = f.text_field :city, :class => 'textfield-medium', :placeholder => "City"
+          = f.text_field :state, :class => 'textfield-medium', :placeholder => "State"
+          = f.text_field :zip, :class => 'textfield-medium', :placeholder => "Zip"
+      .contact-description-wrapper
+        #contact-description.form-item
+          = f.label :description, :class => 'label-above'
+          = f.text_area :description, :class => 'textareafield', :size => '60x3'
+    %div
+      = link_to_function 'More fields', '$(".add-contact-hidden-fields").show("slow");$("#more-contact-fields").hide("fast")', :id => 'more-contact-fields'
+    %br
+    %ul.action-buttons
+      %li.large-button.blue-button
+        = link_to_function "Add Contact", '$("#add-contacts-form").submit()', :class => 'add-contact'
+      %li.cancel-link
+        or
+        = link_to_function "Cancel", "$.facebox.close()"
+
+:javascript
+  $('#add-contacts-form').validate({
+    rules: {
+      // "contact[first_name]": 'required',
+      // "contact[last_name]": 'required',
+      // "contact[email]": 'required email'
+    },
+    showErrors: function(errors) {
+      for (prop in errors) {
+        $("#add-contacts-form").find("input[name='"+prop+"']").addClass('field-error').live('blur', function() {
+          if ($(this).val().length > 0)
+            $(this).removeClass('field-error')
+        })
+      }
+    }
+  })

@@ -1,0 +1,7 @@
+%table#categories_list{:cellpadding => '10px', :cellspacing => '10px'}
+  %tr
+    %th
+    %th
+    %th
+  - for category in categories
+    = render :partial => 'categories/category', :locals => {:category => category}

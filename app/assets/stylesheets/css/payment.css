@@ -1,0 +1,195 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.payment-completed-icon {
+    text-decoration: none;
+    position: relative;
+    width: 95px;
+    display: block;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: #8dc73f;
+    box-shadow: inset 0px 2px 2px #72a330;
+    border-radius: 10px;
+    border: 1px solid #cdcdcd;
+    height: 22px;
+    -moz-transition: 200ms;
+    -o-transition: 200ms;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+}
+.payment-completed-icon span {
+    color: #8dc73f;
+    -moz-transition: 200ms;
+    -o-transition: 200ms;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    text-decoration: none;
+    font-family: 'open sans', arial;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 10px;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 70px;
+    display: block;
+    background: white;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 22px;
+    position: absolute;
+    left: 0px;
+    top: -1px;
+}
+.payment-completed-icon.payment-completed:after {
+    font-family: 'incomehawk';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    content: "\e603";
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    font-size: 12px;
+    text-align: left;
+}
+.payment-completed-icon.payment-not-completed {
+    background: #f2f2f2;
+    box-shadow: inset 0px 2px 2px #bfbfbf;
+}
+.payment-completed-icon.payment-not-completed:after {
+    font-family: 'incomehawk';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    content: "\e600";
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    color: white;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    font-size: 16px;
+    text-align: left;
+    color: #8f8f8f;
+}
+.payment-completed-icon.payment-not-completed span {
+    color: #696969;
+    left: 25px;
+}
+
+#payments-list li {
+    display: block;
+    /*width: 50%;*/
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    margin: 0;
+    position: relative;
+}
+
+#payments-list li.overdew {
+    border-bottom: 1px solid #888;
+}
+
+#payments-list li:hover .hover-actions {
+    display: block;
+}
+#payments-list li .hover-actions {
+    display: none;
+    position: absolute;
+    right: -64px;
+    top: -1px;
+    border: 1px solid #ddd;
+    border-radius: 0px 10px 10px 0px;
+    background: white;
+}
+#payments-list li .hover-actions .delete-payment {
+    width: 33px;
+    height: 32px;
+    text-indent: -9999px;
+    display: block;
+    text-decoration: none;
+    border-left: 1px solid #ddd;
+    float: right;
+    position: relative;
+    -moz-transition: 200ms;
+    -o-transition: 200ms;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+}
+#payments-list li .hover-actions .delete-payment:hover {
+    background: #cc2222;
+}
+#payments-list li .hover-actions .delete-payment:after {
+    font-family: 'incomehawk';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    content: "\e602";
+    -webkit-font-smoothing: antialiased;
+    text-indent: 0;
+    display: block;
+    color: #787878;
+    font-size: 20px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+#payments-list li .hover-actions .delete-payment:hover:after {
+    color: White;
+}
+#payments-list li .hover-actions .payment-edit {
+    width: 33px;
+    height: 32px;
+    float: right;
+    margin-right: 0px;
+}
+#payments-list li .hover-actions .payment-edit a {
+    text-indent: -9999px;
+    display: block;
+    height: 32px;
+    position: relative;
+    text-decoration: none;
+}
+#payments-list li .hover-actions .payment-edit a:hover {
+    background: #0085c6;
+}
+#payments-list li .hover-actions .payment-edit a:after {
+    font-family: 'incomehawk';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    content: "\e601";
+    -webkit-font-smoothing: antialiased;
+    text-indent: 0;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #787878;
+    text-align: center;
+    font-size: 20px;
+}
+#payments-list li .hover-actions .payment-edit a:hover:after {
+    color: white;
+}

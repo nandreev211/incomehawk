@@ -1,0 +1,6 @@
+.number-of-projects
+  .number= projects.count
+  %label{:for => ""} Projects
+.valued-projects
+  .number= p projects.sum{|x| x.estimated_value || 0}
+  %label{:for => ""} Valued

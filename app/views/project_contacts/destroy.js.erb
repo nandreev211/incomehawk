@@ -1,0 +1,5 @@
+<% if @updated %>
+  $.ctNotify("Contact removed")
+  $("#contact_<%= @contact.id %>").hide('fast')
+<% else %> 
+<% end %> 

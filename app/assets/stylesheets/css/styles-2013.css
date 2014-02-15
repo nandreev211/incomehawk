@@ -1,0 +1,315 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: White;
+}
+
+.income-logo {
+  background: url(/assets/income-hawk-logo.png) no-repeat;
+  width: 239px;
+  height: 31px;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  margin-bottom: 20px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+select,
+textarea {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  font-family: "open sans", sans-serif;
+}
+
+input[type=submit],
+input[type=button] {
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  text-align: center;
+  border-radius: 5px;
+  background: #eb1251;
+  font-size: 18px;
+  font-weight: 300;
+  box-shadow: inset 0px -5px 5px #bc0e41, 0px 1px 0px #97d8dd, 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  transition: 200ms;
+  cursor: pointer;
+}
+input[type=submit]:hover,
+input[type=button]:hover {
+  background: #ef2862;
+  box-shadow: inset 0px -5px 5px #bc0e41, 0px 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+input[type=submit]:active,
+input[type=button]:active {
+  background: #d31049;
+  box-shadow: inset 0px -5px 5px #bc0e41, 0px 1px 0px #97d8dd, inset 0px 3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: Block;
+}
+
+/***************************************************************************************************/
+/*                                         Login Page                                         */
+/***************************************************************************************************/
+#login-page {
+  background: #4abbc4;
+  padding-top: 100px;
+  min-height: 800px;
+}
+@media screen and (min-width: 900px) {
+  #login-page {
+    background: url(/assets/login-bg-hawk.jpg) no-repeat center -50px #4abbc4;
+  }
+}
+@media screen and (max-width: 900px) {
+  #login-page {
+    min-height: 0;
+  }
+}
+#login-page .wrapper {
+  max-width: 800px;
+}
+@media screen and (max-width: 900px) {
+  #login-page .wrapper {
+    max-width: 90%;
+  }
+}
+
+.small-form-wrapper {
+  padding-left: 50%;
+}
+@media screen and (max-width: 900px) {
+  .small-form-wrapper {
+    padding: 0;
+  }
+}
+
+.field-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+.field-wrapper .hide-password {
+  display: none;
+}
+.field-wrapper .pass-field-show {
+  display: none;
+}
+.field-wrapper .show-password {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #4abbc4;
+  font-weight: bold;
+  font-size: 13px;
+}
+.field-wrapper input {
+  width: 100%;
+}
+.field-wrapper.error input {
+  border: 1px solid #eb1251 !important;
+}
+.field-wrapper .field-error-message {
+  background: #eb1251;
+  color: white;
+  padding: 5px;
+  margin-top: 3px;
+}
+
+.remember-me {
+  float: left;
+}
+.remember-me .icheckbox_flat-aero {
+  display: inline-block;
+  vertical-align: middle;
+}
+.remember-me label {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.forgot-pass {
+  float: right;
+  color: #15646d;
+  margin-top: 5px;
+}
+
+.bottom-buttons {
+  clear: both;
+  margin-top: 30px;
+  float: left;
+  width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .bottom-buttons {
+    margin: 0 auto;
+    max-width: 400px;
+    float: none;
+    padding-top: 30px;
+  }
+}
+.bottom-buttons input {
+  padding: 15px;
+  width: 50%;
+  margin-right: 30px;
+}
+@media screen and (max-width: 400px) {
+  .bottom-buttons input {
+    margin-right: 10px;
+  }
+}
+.bottom-buttons .or {
+  font-size: 20px;
+}
+.bottom-buttons .or-link {
+  font-size: 25px;
+  float: right;
+  margin-top: 13px;
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.login-message.error{
+    background: #eb1251;
+    margin: 20px 0;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+.login-message.notice{
+    background: #30b4eb;
+    margin: 20px 0;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+.login-message a {
+  color: #fbcedb;
+  clear: both;
+  display: block;
+  margin-top: 4px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.signup-form .form-inner {
+  color: black;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.signup-form .form-inner .signup-text {
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.signup-form .form-inner label {
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.signup-form .form-inner .or-link {
+  float: none;
+  color: #4abbc4;
+  margin-left: 30px;
+  text-shadow: none;
+}
+.signup-form .form-inner .field-wrapper input {
+  border: 1px solid #ddd;
+}
+
+#password-text {
+    display: none;
+}

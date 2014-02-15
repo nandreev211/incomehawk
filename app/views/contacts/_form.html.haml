@@ -1,0 +1,93 @@
+= semantic_form_for @contact, :html => { :class => "add-form", :id => "add-contact" } do |f|
+  %h2
+    %a{:href => "#"}= yield :title
+  .add-project-icon= yield :title
+
+  - unless @contact.errors.empty?
+    - @contact.self_errors.full_messages.each do |msg|
+      %li.errors.form-item
+        = raw msg
+    - @contact.organization.errors.full_messages.each do |msg|
+      %li.errors.form-item
+        = raw msg
+
+  %li.form-item
+    = f.label :first_name, "Name", :class => 'form-label'
+    .field-group
+      = f.text_field :first_name, :class => "textfield textfield-medium #{(!@contact.errors.blank? && @contact.errors.has_key?(:first_name)) ? 'field-error' : ''}"
+      %p.form-description First Name
+    .field-group
+      = f.text_field :last_name, :class => "textfield textfield-medium #{(!@contact.errors.blank? && @contact.errors.has_key?(:last_name)) ? 'field-error' : ''}"
+      %p.form-description Last Name
+  %li.form-item
+    = f.label :organization_name, "Company", :class => 'form-label'
+    = f.text_field :organization_name
+    %p.form-description Name of the Company
+
+  %li.form-item#contact-logo-field
+    = f.label :logo, :class => 'form-label'
+    #fsUploadProgress.logo-preview
+      %img(src='/assets/ajax-loader.gif')
+    -#%a#browse-logo-name.small-button{:href => "#"} Upload
+    = f.file_field :avatar
+    #divStatus
+    %p.form-description Upload Client Logo
+    %p.form-description Max 500k | jpg, png, gif, tiff
+    %p.form-description#logo_img
+
+  %li.form-item
+    = f.label :email, :class => "form-label"
+    = f.text_field :email, :class => "#{(!@contact.errors.blank? && @contact.errors.has_key?(:email)) ? 'field-error' : ''}"
+    %p.form-description Contact's Email Address
+
+  %li.form-item
+    = f.label :website, :class => 'form-label'
+    = f.text_field :website
+    %p.form-description Contact's Website Address
+
+  %li.form-item
+    = f.label :home_phone, "Phone", :class => 'form-label'
+    .field-group
+      = f.text_field :home_phone, :class => 'textfield textfield-medium', :placeholder => "Home"
+      %p.form-description Home
+    .field-group
+      = f.text_field :work_phone, :class => 'textfield textfield-medium', :placeholder => "Work"
+      %p.form-description Work
+  %li.form-item
+    = f.label :country, :class => 'form-label'
+    %ul
+      = f.input :country, :input_html => {:class => 'selectfield'}, :label => false, :priority_countries => ["United States", "Australia"], :prompt => "Select Country"
+    %p.form-description
+  %li.form-item
+    = f.label :address_1, "Address", :class => 'form-label'
+    .field-group.block-group
+      = f.text_field :address_1, :class => 'textfield textfield-long'
+      %p.form-description Street 1
+    .field-group.block-group
+      = f.text_field :address_2, :class => 'textfield textfield-long'
+      %p.form-description Street 1
+    .field-group.first-group
+      = f.text_field :city, :class => 'textfield textfield-medium'
+      %p.form-description City
+    .field-group
+      = f.text_field :state, :class => 'textfield textfield-medium'
+      %p.form-description State
+    .field-group
+      = f.text_field :zip, :class => 'textfield textfield-medium'
+      %p.form-description Zip
+
+  %li.form-item
+    = f.label :description, :class => 'form-label'
+    = f.text_area :description, :size => '10x3'
+    %p.form-description Describe this contact
+
+  %ul.action-buttons
+    %li.green-button
+      - button_txt = @contact.new_record? ? "Add Contact" : "Update"
+      = link_to_function button_txt, "$('form').submit()", :class => "add-contact"
+    %li.cancel-link
+      or
+      = link_to "Cancel", :back
+      - unless @contact.new_record?
+        = link_to "Delete", '#', :class => 'delete-link', :id => 'delete-contact-btn'
+        .hidden= link_to "Delete", contact_path(@contact), :method => :delete, :class => 'delete-link', :id => 'delete-contact-link'

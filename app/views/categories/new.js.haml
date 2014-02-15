@@ -1,0 +1,21 @@
+%h2 EDIT CATEGORIES
+%p
+  you may add more categories or edit you excisting categories here. Editing a category will affect all existing projects.
+
+.categories_add_form
+  %h3 Add a new Category
+  = semantic_form_for Category.new, :remote => true do |fc|
+    = fc.input :name, :input_html => {:id => "new_category_name"}
+    = fc.submit "Add"
+
+:plain
+  <script charset="utf-8, type="text/javascript">
+    $(function() {
+      $('.colorpicker').colorPicker();
+      $('input.colorpicker').live('change', function() {
+        var cid = $(this).attr('id');
+        $("#edit_category_"+cid).submit();
+      })
+    })
+  </script>
+= render :partial => 'categories/categories', :locals => {:categories => @categories}

@@ -1,0 +1,11 @@
+<% if @contact.errors.empty? %>
+  $.facebox.close()
+  $.ctNotify("<%= @contact.name %> added")
+  $('#input-project-contact-field').append($("<option></option>").attr('value', '<%= @contact.id%>').html('<%= @contact.name %>'))
+  $('#input-project-contact-field option:last').attr('selected', 'selected')
+  $('.contacts-select').chosen().trigger("liszt:updated")
+<% else %>
+  <% @contact.errors.full_messages.each do |msg| %>
+    $.ctNotify("<%= raw msg %>", 'error')
+  <% end %>
+<% end %>

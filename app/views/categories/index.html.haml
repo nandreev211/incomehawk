@@ -1,0 +1,17 @@
+#edit-categories.lightbox
+  %a.close-button{:href => "#"} Close
+  %h2 Edit Categories
+  %p
+    You may add more categories or edit existing categories here.
+    %br>/
+    Editing a category will affect all existing projects.
+  .add-category-wrapper
+    = semantic_form_for Category.new, :url => categories_path( :format => :js), :remote => true do |fc|
+      #input-add-category-wrapper.form-item
+        %label.form-add-category-label{:for => "input-add-category"} Add a new Category
+        %input#input-add-category.textfield{:type => "text", :name => "category[name]"}/
+        %a#add-category-button.small-button{:href => "#"} Add
+  %ul#category-list
+    = render :partial => 'categories/categories', :locals => {:categories => @categories}
+
+  %a.done{:href => "#"} I'm Done

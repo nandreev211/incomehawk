@@ -1,0 +1,15 @@
+- title "Project"
+- content_for :head do
+  = javascript_include_tag 'show_project'
+
+#active-projects.dashboard-project
+  #active-projects-container
+    = render_project_overview(@project, true)
+
+  = render :partial => 'payments/payments', :locals => {:payments => @project.payments}
+
+  = render :partial => 'projects/notes', :locals => {:notes => @project.notes}
+
+:javascript
+  window.organization_id = '#{@organization.id}'
+  window.project_id = '#{@project.id}'

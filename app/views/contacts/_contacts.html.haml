@@ -1,0 +1,7 @@
+%table#contacts_list{:cellpadding => '10px', :cellspacing => '10px'}
+  %tr
+    %th{:width => '30px'}
+    %th
+    %th
+  - for contact in @contacts
+    = render :partial => 'contacts/contact', :locals => {:contact => contact}

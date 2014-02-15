@@ -1,0 +1,10 @@
+- title "Add Project"
+- sidebar "tip"
+- content_for :head do
+  = javascript_include_tag 'new_project'
+
+= render 'form'
+
+:javascript
+  window.organization_id = '#{@organization.id}'
+  window.project_id = '#{@project.id}'

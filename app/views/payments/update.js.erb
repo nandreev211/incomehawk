@@ -1,0 +1,40 @@
+$("#payment_<%= @payment.id %> div[payment_id='<%= @payment.id %>']").removeClass("payment-not-completed").removeClass("payment-completed")
+<% if @is_updated == true %>
+  $.ctNotify("Payment updated!")
+<% else %> 
+  <% if @payment.completed %>
+    $("#payment_<%= @payment.id %> div[payment_id='<%= @payment.id %>']").addClass('payment-completed')
+  <% else %>
+    $("#payment_<%= @payment.id %> div[payment_id='<%= @payment.id %>']").addClass('payment-not-completed')
+  <% end %>
+  $.ctNotify("Payment marked as<%= @payment.completed ? '' : ' not' %> completed")
+<% end %> 
+
+<% @project = @payment.project %>
+
+<% if @plain %>
+  $("#payments-header").html("<%= escape_javascript(render('list_header', payments: @payments.to_a))%>")
+  <% if @status.present? %>
+    <% if @status == (@payment.completed ? '1' : '0') %>
+      $("#payment_<%= @payment.id %>").replaceWith("<%= escape_javascript(render('plain_payment', payment: @payment)) %>")
+    <% else %>
+      $("#payment_<%= @payment.id %>").hide()
+    <% end %>
+  <% end %>
+<% else %>
+  $("#active-projects-container").html("<%= escape_javascript(render_project_overview(@payment.project, true))%> ")
+  $("#payment_<%= @payment.id %>").replaceWith("<%= escape_javascript(render(@payment)) %>")
+<% end %>
+
+$(".edit-payment-start_date").datepicker({
+  dateFormat: 'dth M yy',
+  onSelect: function(dateText, inst) {
+    this.value = customFormatString(dateText)
+  }
+});
+
+<% unless @plain %>
+  sortPayments()
+<% end %>
+
+updatePaymentCompletedTooltips();

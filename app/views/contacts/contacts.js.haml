@@ -1,0 +1,9 @@
+.contacts-index
+  %h2 EDIT Contacts
+  %p 
+    you may add more contacts or edit you excisting contacts here. Editing a contact will affect all existing projects.
+
+
+  = render :partial => 'form'
+
+  = render :partial => 'contacts/contacts', :locals => {:contacts => @contacts}
