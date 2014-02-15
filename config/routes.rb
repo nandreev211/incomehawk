@@ -59,5 +59,5 @@ Bacon::Application.routes.draw do
   match '/feedbacks' => 'feedbacks#index'
   root :to => 'organizations#show'
 
-  default_url_options :host => "aqueous-refuge-5197.herokuapp.com"
+  default_url_options :host => "incomehawkapp.com"
 end
