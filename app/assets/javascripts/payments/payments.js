@@ -12,13 +12,13 @@ $(function() {
     if ($(this).hasClass('payment-completed')) {
       msg = "Uncomplete the payment?"
       $(this).removeClass("payment-completed").addClass("payment-not-completed");
-      $(this).find('span').text("pending");
+      $(this).find('span').text("Pending");
       completed = false
     } else {
       msg = 'Are you sure you completed this payment?'
       completed = true
       $(this).removeClass("payment-not-completed").addClass("payment-completed");
-      $(this).find('span').text("paid");
+      $(this).find('span').text("Paid");
     }
 
     data = {payment: {completed: completed}}
