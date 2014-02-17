@@ -1,4 +1,4 @@
-%li.single-payment{:id => "payment_#{payment.id}", :class => completed_text(payment)+"_payment"}
+%li.single-payment{:id => "payment_#{payment.id}", :class => completed_text(payment).downcase+"_payment"}
   .payment-completed-icon{:class => completed_class(payment), :payment_id => payment.id}
     %span= completed_text(payment)
   .payment-value
