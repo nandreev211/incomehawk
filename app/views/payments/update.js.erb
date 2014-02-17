@@ -4,10 +4,11 @@ $("#payment_<%= @payment.id %> div[payment_id='<%= @payment.id %>']").removeClas
 <% else %> 
   <% if @payment.completed %>
     $("#payment_<%= @payment.id %> div[payment_id='<%= @payment.id %>']").addClass('payment-completed')
+    $.ctNotify("Payment has been completed")
   <% else %>
     $("#payment_<%= @payment.id %> div[payment_id='<%= @payment.id %>']").addClass('payment-not-completed')
+    $.ctNotify("Payment is pending")
   <% end %>
-  $.ctNotify("Payment marked as<%= @payment.completed ? '' : ' not' %> completed")
 <% end %> 
 
 <% @project = @payment.project %>
