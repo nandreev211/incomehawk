@@ -1,6 +1,6 @@
 - if defined? ff
   - payment = ff.object
-%li.single-payment{:id => "payment_#{payment.id}"}
+%li.single-payment{:id => "payment_#{payment.id}", :class => "payment_"+completed_text(payment)}
   .payment-completed-icon{:class => completed_class(payment), :payment_id => payment.id}
     %span= completed_text(payment)
   .payment-value
