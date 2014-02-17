@@ -27,9 +27,9 @@
     %span.or or
     %a.cancel-link{:href => "#"} Cancel
     - if defined? ff and @project.new_record?
-      = ff.hidden_field :rate, value: payment.rate
-      = ff.hidden_field :number_of_hours, value: payment.number_of_hours
-      = ff.hidden_field :description, value: payment.description
-      = ff.hidden_field :start_date, value: payment.start_date
-      = ff.hidden_field :recurring, value: payment.recurring
-      = ff.hidden_field :completed, value: payment.completed
+      = ff.hidden_field :rate, value :payment.rate
+      = ff.hidden_field :number_of_hours, value :payment.number_of_hours
+      = ff.hidden_field :description, value :payment.description
+      = ff.hidden_field :start_date, value :payment.start_date
+      = ff.hidden_field :recurring, value :payment.recurring
+      = ff.hidden_field :completed, value :payment.completed
