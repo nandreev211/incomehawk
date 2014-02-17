@@ -1,10 +1,7 @@
 @font-face {
   font-family: 'incomehawk';
   src: url("fonts/incomehawk.eot?iuqejm");
-  src: url("fonts/incomehawk.eot?#iefixiuqejm") format("embedded-opentype"),
-  url("fonts/incomehawk.woff?iuqejm") format("woff"),
-  url("fonts/incomehawk.ttf?iuqejm") format("truetype"),
-  url("fonts/incomehawk.svg?iuqejm#incomehawk") format("svg");
+  src: url("fonts/incomehawk.eot?#iefixiuqejm") format("embedded-opentype"), url("fonts/incomehawk.woff?iuqejm") format("woff"), url("fonts/incomehawk.ttf?iuqejm") format("truetype"), url("fonts/incomehawk.svg?iuqejm#incomehawk") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -314,9 +311,11 @@ p {
   border-bottom-left-radius: 0;
   text-align: center;
 }
+
 #dashboard-header .switch-month:hover {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
+
 #dashboard-header .switch-month:after {
   content: "";
   margin-left: 5px;
@@ -336,9 +335,11 @@ p {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 #dashboard-header #go-to-next-month:hover {
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
 }
+
 #dashboard-header #go-to-next-month:after {
   content: "";
   margin-left: 8px;
@@ -1355,18 +1356,18 @@ label {
 }
 
 .remove-contact.delete-button-small,
-.delete-category.delete-button-small{
-    overflow:hidden;
-    line-height:9999px;
-    width:15px;
-    height:15px;
-    display:block;
-    background:url(/assets/sprite.png) -61px -32px no-repeat;
-
+.delete-category.delete-button-small {
+  overflow: hidden;
+  line-height: 9999px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  background: url(/assets/sprite.png) -61px -32px no-repeat;
 }
+
 .remove-contact.delete-button-small:hover,
-.delete-category.delete-button-small:hover{
-    background:url(/assets/sprite.png) -79px -32px no-repeat;
+.delete-category.delete-button-small:hover {
+  background: url(/assets/sprite.png) -79px -32px no-repeat;
 }
 
 .project-contacts li .contact-card {
@@ -1555,26 +1556,27 @@ a.payment-completed:hover {background:url(../images/sprite.png) 0px -47px;}
 }
 
 #payments-list li.future.last {
-  border-bottom: 2px solid #000;
+  box-shadow: 0px 2px 0px #ddd;
+  margin-bottom: 2px;
 }
 
 #payments-list li.overdew {
-  background-color: #f0d7d7;
+  background: none;
+  box-shadow: -5px 0px 0px #f0d7d7;
+  margin-bottom: 1px;
 }
 
 /*#payments-list .payment-completed-icon {*/
-  /*width: 14px;*/
-  /*height: 14px;*/
-  /*overflow: hidden;*/
-  /*line-height: 999px;*/
-  /*background: url(../images/sprite.png) -43px -32px;*/
-  /*margin-bottom: -1px;*/
+/*width: 14px;*/
+/*height: 14px;*/
+/*overflow: hidden;*/
+/*line-height: 999px;*/
+/*background: url(../images/sprite.png) -43px -32px;*/
+/*margin-bottom: -1px;*/
 /*}*/
-
 /*#payments-list .payment-completed-icon.payment-completed {*/
-  /*background: url(../images/sprite.png) -29px -32px;*/
+/*background: url(../images/sprite.png) -29px -32px;*/
 /*}*/
-
 #payments-list div {
   display: inline-block;
   zoom: 1;
@@ -1672,45 +1674,42 @@ a.payment-completed:hover {background:url(../images/sprite.png) 0px -47px;}
 }
 
 /*#payments-list li .payment-edit {*/
-  /*display: none;*/
-  /*width: 30px;*/
-  /*height: 30px;*/
+/*display: none;*/
+/*width: 30px;*/
+/*height: 30px;*/
 /*}*/
 /*#payments-list li .payment-edit:after {*/
-  /*font-family: 'incomehawk';*/
-  /*content: attr(data-icon);*/
-  /*speak: none;*/
-  /*font-weight: normal;*/
-  /*font-variant: normal;*/
-  /*text-transform: none;*/
-  /*line-height: 1;*/
-  /*content: "\e601";*/
-  /*-webkit-font-smoothing: antialiased;*/
+/*font-family: 'incomehawk';*/
+/*content: attr(data-icon);*/
+/*speak: none;*/
+/*font-weight: normal;*/
+/*font-variant: normal;*/
+/*text-transform: none;*/
+/*line-height: 1;*/
+/*content: "\e601";*/
+/*-webkit-font-smoothing: antialiased;*/
 /*}*/
-
 /*#payments-list li:hover .payment-edit {*/
-  /*position: absolute;*/
-  /*top: -5px;*/
-  /*right: -40px;*/
-  /*display: block;*/
+/*position: absolute;*/
+/*top: -5px;*/
+/*right: -40px;*/
+/*display: block;*/
 /*}*/
-
 /*#payments-list li.edit-mode:hover .payment-edit {*/
-  /*display: none;*/
+/*display: none;*/
 /*}*/
-
 /*#payments-list li .payment-edit {*/
-    /*float: right;*/
-    /*display: none;*/
+/*float: right;*/
+/*display: none;*/
 /*}*/
-
 #payments-list li:hover .payment-edit {
-    top: 6px;
-    right: 20px;
-    display: inline-block;
+  top: 6px;
+  right: 20px;
+  display: inline-block;
 }
+
 #payments-list li.edit-mode:hover .payment-edit {
-    display: none;
+  display: none;
 }
 
 #payments-list li.edit-mode .delete-payment {

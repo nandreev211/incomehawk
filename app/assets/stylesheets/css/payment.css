@@ -1,9 +1,3 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 .payment-completed-icon {
     text-decoration: none;
     position: relative;
@@ -21,6 +15,9 @@
     -o-transition: 200ms;
     -webkit-transition: 200ms;
     transition: 200ms;
+    position: absolute;
+    right: 0px;
+    top: 5px;
 }
 .payment-completed-icon span {
     color: #8dc73f;
@@ -39,7 +36,7 @@
     display: block;
     background: white;
     text-align: center;
-    padding-top: 2px;
+    padding-top: 4px;
     padding-bottom: 2px;
     height: 22px;
     position: absolute;
@@ -94,24 +91,19 @@
 
 #payments-list li {
     display: block;
-    /*width: 50%;*/
     border-bottom: 1px solid #ddd;
-    padding: 5px;
+    padding: 8px;
     margin: 0;
     position: relative;
+    padding-right: 100px;
 }
-
-#payments-list li.overdew {
-    border-bottom: 1px solid #888;
-}
-
 #payments-list li:hover .hover-actions {
     display: block;
 }
 #payments-list li .hover-actions {
     display: none;
     position: absolute;
-    right: -64px;
+    right: -82px;
     top: -1px;
     border: 1px solid #ddd;
     border-radius: 0px 10px 10px 0px;
@@ -159,7 +151,6 @@
     width: 33px;
     height: 32px;
     float: right;
-    margin-right: 0px;
 }
 #payments-list li .hover-actions .payment-edit a {
     text-indent: -9999px;
