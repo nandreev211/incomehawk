@@ -19,16 +19,15 @@
     .payment-edit
       =link_to "edit", '#', :class => 'edit-link'
   .update-payment-wrapper{:payment_id => "#{payment.id}"}
-    %input.edit-payment-rate{:type => "textfield", :value => "#{payment.rate.to_i}", :name => 'payment-rate', :placeholder => 'Rate'}/
-    %input.edit-payment-hours{:type => "textfield", :value => "#{payment.number_of_hours.to_i}", :name => 'payment-number_of_hours', :placeholder => 'Hours'}/
-    %input.edit-payment-description{:type => "textfield", :value => "#{payment.description}", :name => 'payment-description', :placeholder => "Description"}/
-    %input.edit-payment-start_date{:type => "textfield", :value => "#{payment.start_date.strftime("#{ActiveSupport::Inflector.ordinalize(day)} %b %Y")}", :name => 'payment-start_date'}/
+    %input.edit-payment-rate{:type => 'textfield', :value => "#{payment.rate.to_i}", :name => 'payment-rate', :placeholder => 'Rate'}/
+    %input.edit-payment-hours{:type => 'textfield', :value => "#{payment.number_of_hours.to_i}", :name => 'payment-number_of_hours', :placeholder => 'Hours'}/
+    %input.edit-payment-description{:type => 'textfield', :value => "#{payment.description}", :name => 'payment-description', :placeholder => "Description"}/
+    %input.edit-payment-start_date{:type => 'textfield', :value => "#{payment.start_date.strftime("#{ActiveSupport::Inflector.ordinalize(day)} %b %Y")}", :name => 'payment-start_date'}/
     %a.save-payment.small-button{:href => "#"} Save
     %span.or or
     %a.cancel-link{:href => "#"} Cancel
     - if defined? ff and @project.new_record?
       = ff.hidden_field :rate, value: payment.rate
-      = ff.hidden_field :number_of_hours, value: payment.number_of_hours
       = ff.hidden_field :number_of_hours, value: payment.number_of_hours
       = ff.hidden_field :description, value: payment.description
       = ff.hidden_field :start_date, value: payment.start_date
