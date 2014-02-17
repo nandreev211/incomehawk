@@ -87,9 +87,9 @@ function IsIncomeDate(d) {
 
 function updatePaymentCompletedTooltips() {
     $(".payment-completed-icon").each(function() {
-        var title = 'Mark as Completed';
+        var title = 'Mark as completed';
         if ($(this).hasClass("payment-completed")) {
-            title = 'Mark as Uncompleted';
+            title = 'Mark as pending';
         }
         $(this).attr('title', title);
     })

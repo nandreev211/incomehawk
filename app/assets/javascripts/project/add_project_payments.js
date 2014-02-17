@@ -213,11 +213,11 @@ $(function() {
     if ($(this).hasClass("payment-not-completed")) {
       $(this).removeClass("payment-not-completed").addClass("payment-completed")
       $(this).parent().find(".payment-completed-value").attr('value', '1')
-      $.ctNotify("Payment marked as completed")
+      $.ctNotify("Payment has been completed")
     } else {
       $(this).addClass("payment-not-completed").removeClass("payment-completed")
       $(this).parent().find(".payment-completed-value").attr('value', '0')
-      $.ctNotify("Payment marked as not completed")
+      $.ctNotify("Payment is pending")
     }
     sortPayments();
   })
