@@ -6,7 +6,7 @@
     anchors:{bottom: 0, right: 0}
   });
 
--unless @organization.demo_projects.empty?
+-unless @organization.demo_projects.empty?  or @organization.notice_demo==false
   #demo-projects-notice{:organization_id => @organization.id}
     %ul
       %li.description
