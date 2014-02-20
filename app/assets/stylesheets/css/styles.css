@@ -3308,31 +3308,35 @@ textarea {
   width: 100%;
 }
 
-#demo-projects {
+#demo-projects-notice {
     background-color: #e7d7b3;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#demo-projects ul li {
+#demo-projects-notice ul li {
     display: inline-block;
 }
 
-#demo-projects .demo-bar-close-button {
-    background: url(/assets/close-button.png) left no-repeat;
-    width: 16px;
-    height: 16px;
-    display: block;
-    overflow: hidden;
-    line-height: 9999px;
-    position: absolute;
+#demo-projects-notice .demo-bar-close-button {
+  background: url(/assets/close-button.png) left no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  overflow: hidden;
+  line-height: 9999px;
+  position: absolute;
 }
 
-#demo-projects ul li.description {
-    padding-left: 20px;
+#demo-projects-notice ul li.description {
+  padding-left: 20px;
 }
 
-#demo-projects ul li.close {
-    float: right;
-    padding-right: 20px;
+#demo-projects-notice ul li.close {
+  float: right;
+  padding-right: 20px;
+}
+
+#demo-projects-notice.hidden {
+  display: none;
 }

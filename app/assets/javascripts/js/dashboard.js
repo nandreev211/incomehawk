@@ -63,5 +63,7 @@ $(function() {
     return false
   })
 
-
+  $('.demo-bar-close-button').live('click', function() {
+    $('#demo-projects-notice').toggleClass('hidden');
+  })
 })
