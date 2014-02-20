@@ -16,14 +16,19 @@ class Organization < ActiveRecord::Base
   validates_presence_of :name, :currency
   validates_uniqueness_of :url, :unless => lambda {|o| o.url.blank?}
 
-  attr_accessible :name, :url, :currency, :plan_id
+  attr_accessible :name, :url, :currency, :plan_id, :notice_demo
   attr_accessible :name, :url, :currency, :plan_id, :admin_id, :as => :admin
 
-  before_create :set_default_plan
+  before_create :set_default_plan, :set_notice_demo
   after_create :create_demo_projects
 
   def set_default_plan
     self.plan_id = Plan.default_id if self.plan_id.nil? || self.plan_id == 0
+  end
+
+  #set the notice_demo parameter true which means we have to show demo projects notice bar on top of screen
+  def set_notice_demo
+    self.notice_demo = true
   end
 
   def create_demo_projects

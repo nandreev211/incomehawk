@@ -25,6 +25,12 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def update
+    if params[:organization][:notice_demo]
+      @organization.update_attributes(params[:organization])
+    end
+  end
+
   def welcome
     unless user_signed_in?
       redirect_to login_path

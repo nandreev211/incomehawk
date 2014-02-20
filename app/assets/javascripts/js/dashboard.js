@@ -65,5 +65,12 @@ $(function() {
 
   $('.demo-bar-close-button').live('click', function() {
     $('#demo-projects-notice').toggleClass('hidden');
+    organization_id = $('#demo-projects-notice').attr('organization_id')
+
+    $.ajax({
+      url: '/organizations/'+organization_id,
+      type: 'PUT',
+      data: {organization: {notice_demo: false}}
+    })
   })
 })

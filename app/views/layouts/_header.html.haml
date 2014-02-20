@@ -5,8 +5,9 @@
     width: '400px',
     anchors:{bottom: 0, right: 0}
   });
+
 -unless @organization.demo_projects.empty?
-  #demo-projects-notice
+  #demo-projects-notice{:organization_id => @organization.id}
     %ul
       %li.description
         We've created sample projects and payments to help familiarize you with Income Hawk. Visit your
