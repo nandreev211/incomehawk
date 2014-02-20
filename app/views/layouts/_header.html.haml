@@ -6,6 +6,15 @@
     anchors:{bottom: 0, right: 0}
   });
 
+#demo-projects
+  %ul
+    %li.description
+      We've created sample projects and payments to help familiarize you with Income Hawk. Visit your
+      = link_to "Account page", '/account'
+      to delete them.
+    %li.close
+      = link_to "close", '#', class: 'demo-bar-close-button'
+
 #header
   .inner
     = link_to @organization.name, organization_path(@organization), id: 'logo'
