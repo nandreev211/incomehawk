@@ -3319,7 +3319,7 @@ textarea {
 }
 
 #demo-projects .demo-bar-close-button {
-    background: url(images/close-button.png) left no-repeat;
+    background: url(/images/close-button.png) left no-repeat;
     width: 16px;
     height: 16px;
     display: block;
