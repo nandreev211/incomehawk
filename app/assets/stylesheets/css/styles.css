@@ -806,7 +806,7 @@ label {
   width: 30px;
   height: 30px;
   display: block;
-  background: url(../images/sprite.png) -35px 0px no-repeat;
+  background: url(/assets/sprite.png) -35px 0px no-repeat;
   overflow: hidden;
   line-height: 9999px;
   position: absolute;
@@ -3319,7 +3319,7 @@ textarea {
 }
 
 #demo-projects .demo-bar-close-button {
-    background: url(../images/close-button.png) left no-repeat;
+    background: url(/assets/close-button.png) left no-repeat;
     width: 16px;
     height: 16px;
     display: block;
