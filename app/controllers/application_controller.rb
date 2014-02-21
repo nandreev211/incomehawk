@@ -10,13 +10,17 @@ class ApplicationController < ActionController::Base
 
   helper :all
 
-
+  #if users sign in for the first time, then redirects to tour page
   def after_sign_in_path_for(resource)
     if current_user.sign_in_count == 1
       '/welcome'
     else
       current_organization_path
     end
+  end
+
+  def after_sign_out_path_for(resource)
+    '/users/sign_in'
   end
 
 
