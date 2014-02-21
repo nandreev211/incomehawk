@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
   end
 
   def staff_path?
-    request.path_parameters[:controller] =~ /(devise|admin)/
+    request.path_parameters[:controller] =~ /(devise|admin|dashboard)/
   end
 
   def current_organization
