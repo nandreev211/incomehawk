@@ -78,12 +78,19 @@ $(function() {
     var timestamp = Date.parse(paymentDateValue).getTime();
 
     completedIcon = $("<div class='payment-completed-icon'></div>").addClass(paymentCompleted).addClass("input-payment-completed")
+    if(paymentCompleted == 'payment-completed')
+      completedIcon.append($("<span>Paid</span>"))
+    else
+      completedIcon.append($("<span>Pending</span>"))
     newPayment.append(completedIcon)
     newPayment.append($("<div class='payment-value'></div>").html(currentCurrency() + paymentTotal ))
     newPayment.append($("<div class='payment-name'></div>").html(paymentDescription))
     newPayment.append($("<div class='payment-date'></div>").html(paymentDateValue ))
     newPayment.append($("<div class='payment-type'></div>").html("("+payment+")"))
-    newPayment.append($("<a href='#' title='Remove Payment'>Remove Payment</a>").addClass("delete-payment").addClass("delete-button-small"))
+    actionButtons = $("<div class='hover-actions'></div>")
+    actionButtons.append($("<a href='#' title='Remove Payment'>Remove Payment</a>").addClass("delete-payment").addClass("delete-button-small"))
+//  actionButtons.append($("<div class='payment-edit'><a href='#' class='edit-link'>edit</a></div>"))
+    newPayment.append(actionButtons)
     newPayment.append("<div class='sort-order' order='"+timestamp+"'></div>")
 
     i = paymentIterator
