@@ -117,7 +117,7 @@ $(function() {
   }
 
   function removePaymentFromList(el) {
-    el.parent().remove()
+    el.parent().parent().remove()
   }
 
   function clearPaymentValues() {

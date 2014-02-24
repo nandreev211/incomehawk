@@ -1,7 +1,7 @@
 <% unless @errors %>
   // show new payment node
   <% @payments.each do |payment| %>
-    var paymentNode = $("<%= escape_javascript(render(payment)) %>").hide()
+    var paymentNode = $("<%= escape_javascript(render(payment)) %>")//.hide()
     $('#payments-list').append(paymentNode)
     paymentNode.show('fast')
   <% end %>
