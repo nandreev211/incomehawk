@@ -1536,7 +1536,7 @@ a.payment-completed:hover {background:url(../images/sprite.png) 0px -47px;}
 
 #add-payment-button {
   clear: both;
-  float: left;
+  /*float: left;*/
 }
 
 /*** added payments ****/
