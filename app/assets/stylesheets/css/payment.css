@@ -103,7 +103,7 @@
 #payments-list li .hover-actions {
     display: none;
     position: absolute;
-    right: -82px;
+    right: -75px;
     top: -1px;
     border: 1px solid #ddd;
     border-radius: 0px 10px 10px 0px;
@@ -151,6 +151,7 @@
     width: 33px;
     height: 32px;
     float: right;
+    margin-right: 0px;
 }
 #payments-list li .hover-actions .payment-edit a {
     text-indent: -9999px;
