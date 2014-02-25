@@ -15,6 +15,12 @@
 
   $("#active-projects-container").html("<%= escape_javascript(render_project_overview(@project, true))%>")
 
+  $(".edit-payment-start_date").datepicker({
+    dateFormat: 'dth M yy',
+    onSelect: function(dateText, inst) {
+        this.value = customFormatString(dateText)
+    }
+  });
   sortPayments()
 <% else %>
   $.ctNotify("<%= @errors%>", 'error')
