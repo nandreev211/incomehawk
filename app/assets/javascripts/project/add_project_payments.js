@@ -97,7 +97,7 @@ $(function() {
     newPayment.append($("<div class='payment-type'></div>").html("("+payment+")"))
     actionButtons = $("<div class='hover-actions'></div>")
     actionButtons.append($("<a href='#' title='Remove Payment'>Remove Payment</a>").addClass("delete-payment").addClass("delete-button-small"))
-//  actionButtons.append($("<div class='payment-edit'><a href='#' class='edit-link'>edit</a></div>"))
+    actionButtons.append($("<div class='payment-edit'><a href='#' class='edit-link'>edit</a></div>"))
     newPayment.append(actionButtons)
     newPayment.append("<div class='sort-order' order='"+timestamp+"'></div>")
 
