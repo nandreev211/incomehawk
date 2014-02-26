@@ -60,6 +60,14 @@ $(function() {
       }
         
       clearPaymentValues();
+
+      $(".edit-payment-start_date").datepicker({
+          dateFormat: 'dth M yy',
+          onSelect: function(dateText, inst) {
+              this.value = customFormatString(dateText)
+          }
+      });
+
     } else {
       $.ctNotify("Please fill out all the fields", 'error')
     }
